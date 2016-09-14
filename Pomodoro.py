@@ -1,3 +1,5 @@
+# Standard, manual pomodoro script.
+
 class Pomodoro (object):
     # default values for Pomodoro class
     def __init__(self):

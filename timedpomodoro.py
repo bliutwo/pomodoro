@@ -1,3 +1,5 @@
+# Designed for when you have 8+ hours straight to work.
+
 import sys
 sys.dont_write_bytecode = True
 
