@@ -9,6 +9,7 @@ class Pomodoro (object):
         self.sofar = 0
         self.percentage = 0.0
         self.breaktime = 3
+        self.longbreak = 12
         self.remainingPomo = self.set_remaining_pomo(self.goal)
     # adds one pomodoro's worth of time to current session
     def add(self):
@@ -26,6 +27,9 @@ class Pomodoro (object):
     # returns breaktime in seconds
     def get_breaktime(self):
         return (self.breaktime * 60)
+    # returns longbreak in seconds
+    def get_longbreak(self):
+        return (self.longbreak * 60)
     # returns pomodoro amount in seconds
     def get_pomodoro(self):
         return (self.pomodoro * 60)
@@ -39,6 +43,8 @@ class Pomodoro (object):
             return (customGoal / self.pomodoro)
         else:
             return ((customGoal / self.pomodoro) + 1)
+    def get_remaining_pomo(self):
+        return self.remainingPomo
     # checks if session has finished
     def done(self):
         return self.sofar >= self.goal
