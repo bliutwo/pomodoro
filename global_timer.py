@@ -12,7 +12,7 @@ class GlobalTimer (object):
     # prints time left
     def status(self):
         h = self.remaining / 3600
-        m = self.remaining / 60
+        m = self.remaining / 60 % 60
         s = self.remaining % 60
         print "\nGlobal timer: %d hours, %d minutes, and %d seconds remaining." % (h, m, s)
     # returns True if the global timer has been exhausted
