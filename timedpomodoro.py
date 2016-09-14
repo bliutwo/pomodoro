@@ -33,9 +33,10 @@ def time_remaining(amount, sesh, globaltimer):
 def execute_pomodoro(session, globaltimer):
     while session.done() == False:
         time_remaining(session.get_pomodoro(), session, globaltimer)
-        if (globaltimer != None) or globaltimer.done():
-            globaltimer.status()
-            break
+        if (globaltimer != None):
+            if globaltimer.done():
+                globaltimer.status()
+                break
         print "\a"
         session.add()
         if session.done():
@@ -45,9 +46,10 @@ def execute_pomodoro(session, globaltimer):
             time_remaining(session.get_longbreak(), session, globaltimer)
         else:
             time_remaining(session.get_breaktime(), session, globaltimer)
-        if (globaltimer != None) or globaltimer.done():
-            globaltimer.status()
-            break
+        if (globaltimer != None):
+            if globaltimer.done():
+                globaltimer.status()
+                break
         print "\a"
         session.printProgress()
 

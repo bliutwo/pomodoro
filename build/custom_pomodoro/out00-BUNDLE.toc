@@ -1,3 +1,0 @@
-([('custom_pomodoro',
-   '/Users/bliutwo/Dropbox/Daily Goals/pomodoro/dist/custom_pomodoro',
-   'EXECUTABLE')],)
