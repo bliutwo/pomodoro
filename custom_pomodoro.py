@@ -9,21 +9,24 @@ sys.dont_write_bytecode = True
 
 from Pomodoro import *
 from timedpomodoro import *
+from global_timer import *
 
 def main():
-    # wat do here
-    hourString = raw_input("How many hours can you work? ")
+    hourString = raw_input("How many hours can you work this session? ")
     minutesString = raw_input("How many minutes in addition to that? ")
     hours = int(hourString)
     minutes = int(minutesString)
     session = Pomodoro()
+    seconds = (hours * 3600) + (minutes * 60)
+    globaltimer = GlobalTimer()
+    globaltimer.set_timer(seconds)
     # totalTime is in minutes
     totalTime = (hours * 60) + minutes
     pomodoroInMinutes = session.get_pomodoro() / 60
     if (totalTime < pomodoroInMinutes):
         totalTime = pomodoroInMinutes
     session.set_goal(totalTime)
-    execute_pomodoro(session)
+    execute_pomodoro(session, globaltimer)
 
 if __name__ == "__main__":
     main()
