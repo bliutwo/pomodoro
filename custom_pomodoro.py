@@ -3,6 +3,7 @@
 # to work, or you only plan to work a certain amount of time. It will ask you
 # how much time you have to work in hours and minutes (no seconds because BASEDWATM8).
 # Requires timedpomodoro.py and Pomodoro.py
+# TODO: Make it so that pressing [RETURN] ends the session
 
 import sys
 sys.dont_write_bytecode = True
