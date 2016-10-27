@@ -1,5 +1,6 @@
 # Designed for when you have 8+ hours straight to work.
 # TODO: Make this play the mp3 file included in the folder.
+# http://stackoverflow.com/questions/307305/play-a-sound-with-python
 
 import sys
 sys.dont_write_bytecode = True
