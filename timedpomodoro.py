@@ -3,6 +3,7 @@
 # http://stackoverflow.com/questions/307305/play-a-sound-with-python
 
 import sys
+from pygame_sound import *
 sys.dont_write_bytecode = True
 
 from Pomodoro import *
@@ -39,7 +40,8 @@ def execute_pomodoro(session, globaltimer):
             if globaltimer.done():
                 globaltimer.status()
                 break
-        print "\a"
+        playSound("./exclamation.mp3")
+        #print "\a"
         session.add()
         if session.done():
             session.printProgress()
@@ -52,9 +54,10 @@ def execute_pomodoro(session, globaltimer):
             if globaltimer.done():
                 globaltimer.status()
                 break
-        print "\a"
+        playSound("./exclamation.mp3")
         session.printProgress()
 
+    playSound("./exclamation.mp3")
     print "\nExiting."
     print "DONE!"
 

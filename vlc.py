@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/env python -B
 # -*- coding: utf-8 -*-
 
 # Python ctypes bindings for VLC
@@ -45,6 +45,9 @@ from ctypes.util import find_library
 import os
 import sys
 import functools
+
+sys.dont_write_bytecode = True
+PYTHONDONTWRITEBYTECODE=1
 
 # Used by EventManager in override.py
 from inspect import getargspec
