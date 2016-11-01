@@ -55,9 +55,11 @@ def execute_pomodoro(session, globaltimer):
                 globaltimer.status()
                 break
         playSound("./exclamation.mp3")
+        # print "\a"
         session.printProgress()
 
     playSound("./exclamation.mp3")
+    # print "\a"
     print "\nExiting."
     print "DONE!"
 
