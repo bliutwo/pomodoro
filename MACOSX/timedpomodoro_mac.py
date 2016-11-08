@@ -24,7 +24,8 @@ def time_remaining(amount, sesh, globaltimer):
     while amount != 0:
         clear_screen()
         sesh.printProgress()
-        if (orig_amount == sesh.get_breaktime()):
+        if (orig_amount == sesh.get_breaktime() or orig_amount == \
+            sesh.get_longbreak()):
             for i in range(0,10):
                 print "ON BREAK ON BREAK ON BREAK ON BREAK ON BREAK ON BREAK"
             print "\nBreak timer: %d minutes and %d seconds remaining." % ((amount / 60), (amount % 60))
@@ -52,7 +53,7 @@ def execute_pomodoro(session, globaltimer):
         if session.done():
             session.printProgress()
             break
-        if ((session.get_remaining_pomo() % 4) == 0):
+        if ((session.get_number_pomo() % 4) == 0):
             time_remaining(session.get_longbreak(), session, globaltimer)
         else:
             time_remaining(session.get_breaktime(), session, globaltimer)
