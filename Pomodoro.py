@@ -9,7 +9,7 @@ class Pomodoro (object):
         self.sofar = 0
         self.percentage = 0.0
         self.breaktime = 3 # TODO: Change this back to 3
-        self.longbreak = 12
+        self.longbreak = 12 # TODO: Change this back to 12
         self.remainingPomo = self.set_remaining_pomo(self.goal)
     # adds one pomodoro's worth of time to current session
     def add(self):

@@ -3,8 +3,12 @@
 # http://stackoverflow.com/questions/307305/play-a-sound-with-python
 
 import sys
-from pygame_sound import * # TODO: include this when on Linux computer
+# from pygame_sound import * # TODO: include this when on Linux computer
 sys.dont_write_bytecode = True
+sys.path.insert(0, '..')
+
+import subprocess
+audio_file = "../exclamation.mp3"
 
 from Pomodoro import *
 import time
@@ -41,8 +45,9 @@ def execute_pomodoro(session, globaltimer):
             if globaltimer.done():
                 globaltimer.status()
                 break
-        playSound("./exclamation.mp3")
+        # playSound("./exclamation.mp3")
         #print "\a"
+        return_code = subprocess.call(["afplay", audio_file])
         session.add()
         if session.done():
             session.printProgress()
@@ -55,12 +60,14 @@ def execute_pomodoro(session, globaltimer):
             if globaltimer.done():
                 globaltimer.status()
                 break
-        playSound("./exclamation.mp3")
+        # playSound("./exclamation.mp3")
         #print "\a"
+        return_code = subprocess.call(["afplay", audio_file])
         session.printProgress()
 
-    playSound("./exclamation.mp3")
+    # playSound("./exclamation.mp3")
     #print "\a"
+    return_code = subprocess.call(["afplay", audio_file])
     print "\nExiting."
     print "DONE!"
 
