@@ -4,12 +4,12 @@ class Pomodoro (object):
     # default values for Pomodoro class
     def __init__(self):
         self.count = 0
-        self.pomodoro = 0.2 # TODO Default is 27.5
+        self.pomodoro = 27.5 # TODO Default is 27.5
         self.goal = 8*60
         self.sofar = 0
         self.percentage = 0.0
-        self.breaktime = 0.1 # TODO: Default is 3
-        self.longbreak = 0.3 # TODO: Default is 12
+        self.breaktime = 3 # TODO: Default is 3
+        self.longbreak = 12 # TODO: Default is 12
         self.remainingPomo = self.set_remaining_pomo(self.goal)
     # adds one pomodoro's worth of time to current session
     def add(self):
