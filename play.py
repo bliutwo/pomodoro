@@ -6,3 +6,4 @@ PYTHONDONTWRITEBYTECODE = 1
 
 p = vlc.MediaPlayer("./exclamation.mp3")
 p.play()
+p.play()
