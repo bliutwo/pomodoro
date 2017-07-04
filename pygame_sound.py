@@ -8,7 +8,9 @@ def playSound(filename):
         continue
 
 def main():
-    playSound("./exclamation.mp3")
+#    playSound("./exclamation.mp3")
+    playSound("./abadis.mp3")
+
 
 if __name__ == "__main__":
     main()

@@ -63,8 +63,8 @@ def execute_pomodoro(session, globaltimer):
     playSound("./exclamation.mp3")
     #print "\a"
     print "\nExiting."
-    print "DONE!"
-
+    print "DONE! ctrl + c to exit"
+    playSound("./abadis.mp3")
 
 def main():
     # 27 minutes and 30 seconds = 1650 seconds

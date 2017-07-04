@@ -9,6 +9,7 @@ sys.path.insert(0, '..')
 
 import subprocess
 audio_file = "../exclamation.mp3"
+audio_file2 = "../abadis.mp3"
 
 from Pomodoro import *
 import time
@@ -70,7 +71,8 @@ def execute_pomodoro(session, globaltimer):
     #print "\a"
     return_code = subprocess.call(["afplay", audio_file])
     print "\nExiting."
-    print "DONE!"
+    print "DONE! ctrl + c to exit"
+    return_code = subprocess.call(["afplay", audio_file2])
 
 
 def main():
