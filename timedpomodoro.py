@@ -42,7 +42,7 @@ def execute_pomodoro(session, globaltimer):
             if globaltimer.done():
                 globaltimer.status()
                 break
-        playSound("./exclamation.mp3")
+        playSound("./harp.mp3")
         #print "\a"
         session.add()
         if session.done():
