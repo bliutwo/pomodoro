@@ -13,6 +13,7 @@ python custom_pomodoro.py
 - Requires pygame. http://askubuntu.com/questions/399824/how-to-install-pygame
 
 - [Installing pygame](https://www.pygame.org/wiki/GettingStarted) (this only installs pygame for Python 3)
+- [Installing pygame (Mac) for Python 2](https://stackoverflow.com/questions/20968480/installing-pygame-module-for-python-2-7-5-on-terminal)
 
 Wikipedia page here: https://en.wikipedia.org/wiki/Pomodoro_Technique
 
