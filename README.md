@@ -2,7 +2,7 @@
 
 Small python scripts designed to help with productivity.
 
-Uses Python 2. TODO: Update to use Python 3.
+Uses Python 2. TODO: Eventually will use Python 3.
 
 Usage: 
 
