@@ -48,7 +48,7 @@ def execute_pomodoro(session, globaltimer):
         if session.done():
             session.printProgress()
             break
-        if ((session.get_number_pomo() % 4) == 0):
+        if ((session.get_number_pomo() % session.dividend) == 0):
             time_remaining(session.get_longbreak(), session, globaltimer)
         else:
             time_remaining(session.get_breaktime(), session, globaltimer)

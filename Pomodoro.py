@@ -4,19 +4,21 @@ class Pomodoro (object):
     # default values for Pomodoro class
     def __init__(self):
         self.count = 0
-        self.pomodoro = 27.5 # TODO Default is 27.5
+        self.pomodoro = 15 # TODO Default is 27.5
         self.goal = 8*60
         self.sofar = 0
         self.percentage = 0.0
         self.breaktime = 3 # TODO: Default is 3
-        self.longbreak = 12 # TODO: Default is 12
+        self.longbreak = 9 # TODO: Default is 12
+        self.dividend = 4   # TODO: Default is 4
         self.remainingPomo = self.set_remaining_pomo(self.goal)
     # adds one pomodoro's worth of time to current session
     def add(self):
         self.count = self.count + 1
         self.sofar = self.pomodoro * self.count
-        self.percentage = self.sofar / self.goal * 100.0
         self.remainingPomo = self.remainingPomo - 1
+        # self.percentage = 1.0 * self.sofar / self.goal * 100.0
+        self.percentage = 1.0 * self.count / (self.remainingPomo + self.count) * 100.0
     # prints progress so far
     def printProgress(self):
         print "Number of pomodori: %d" % self.count
@@ -39,10 +41,13 @@ class Pomodoro (object):
         self.remainingPomo = self.set_remaining_pomo(customGoal)
     # returns remainingPomo, takes customGoal in minutes
     def set_remaining_pomo(self, customGoal):
-        if ((customGoal % self.pomodoro) == 0):
-            return (customGoal / self.pomodoro)
+        divisor = ((self.pomodoro + self.breaktime) * self.dividend) - self.breaktime
+        num_longbreaks = customGoal / divisor
+        time_left = customGoal - (num_longbreaks * self.longbreak)
+        if ((time_left % (self.pomodoro + self.breaktime)) == 0):
+            return (time_left / (self.pomodoro + self.breaktime))
         else:
-            return ((customGoal / self.pomodoro) + 1)
+            return ((time_left / (self.pomodoro + self.breaktime)) + 1)
     def get_remaining_pomo(self):
         return self.remainingPomo
     # checks if session has finished
