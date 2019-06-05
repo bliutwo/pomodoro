@@ -1,10 +1,16 @@
 Small python scripts designed to help with productivity.
 
-Uses Python 2.7.something Hhhehhehe
+Uses Python 2. TODO: Update to use Python 3.
 
-Usage: Run either Pomodoro.py, timedpomodoro.py, or custom_pomodoro.py as a normal python script.
+Usage: 
 
-Requires pygame. http://askubuntu.com/questions/399824/how-to-install-pygame
+```
+python custom_pomodoro.py
+```
+
+- Requires pygame. http://askubuntu.com/questions/399824/how-to-install-pygame
+
+- [Installing pygame](https://www.pygame.org/wiki/GettingStarted) (this only installs pygame for Python 3)
 
 Wikipedia page here: https://en.wikipedia.org/wiki/Pomodoro_Technique
 
