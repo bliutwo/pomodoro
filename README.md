@@ -2,16 +2,17 @@
 
 Small python scripts designed to help with productivity.
 
-Uses Python 2. TODO: Eventually will use Python 3.
+Uses Python 3! 
 
 Usage: 
 
 ```
-python custom_pomodoro.py
+python3 custom_pomodoro.py
 ```
 
 - Requires pygame. http://askubuntu.com/questions/399824/how-to-install-pygame
 
+- [Official pygame installation instructions](https://www.pygame.org/wiki/GettingStarted)
 - [Installing pygame](https://www.pygame.org/wiki/GettingStarted) (this only installs pygame for Python 3)
 - [Installing pygame (Mac) for Python 2](https://stackoverflow.com/questions/20968480/installing-pygame-module-for-python-2-7-5-on-terminal)
 - [PyGame Installation Mac OS X](https://stackoverflow.com/questions/30743194/pygame-installation-mac-os-x)
