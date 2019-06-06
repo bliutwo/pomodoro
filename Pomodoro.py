@@ -21,11 +21,11 @@ class Pomodoro (object):
         self.percentage = 1.0 * self.count / (self.remainingPomo + self.count) * 100.0
     # prints progress so far
     def printProgress(self):
-        print "Number of pomodori: %d" % self.count
-        print "So far: %f hours" % (self.sofar / 60.0)
-        print "Percentage: %f%%" % self.percentage
-        print "Pomodori left: %d" % self.remainingPomo
-        print ""
+        print("Number of pomodori: %d" % self.count)
+        print("So far: %f hours" % (self.sofar / 60.0))
+        print("Percentage: %f%%" % self.percentage)
+        print("Pomodori left: %d" % self.remainingPomo)
+        print("")
     # returns breaktime in seconds
     def get_breaktime(self):
         return (self.breaktime * 60)
@@ -63,9 +63,9 @@ def main():
     userInput = raw_input("Press [RETURN] to increase count by 1 (0 to exit): ")
 
     while userInput != "0":
-        print ""
+        print("")
         if userInput != "":
-            print "Invalid input."
+            print("Invalid input.")
             userInput = raw_input("Press [RETURN] to increase "
                                   "count by 1 (0 to exit): ")
         else:
@@ -76,9 +76,9 @@ def main():
                                   "count by 1 (0 to exit): ")
 
     if userInput == "0":
-        print "Exiting."
+        print("Exiting.")
     else:
-        print "DONE!"
+        print("DONE!")
 
 if __name__ == "__main__":
     main()

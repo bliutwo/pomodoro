@@ -13,8 +13,8 @@ from timedpomodoro import *
 from global_timer import *
 
 def main():
-    hourString = raw_input("How many hours can you work this session? ")
-    minutesString = raw_input("How many minutes in addition to that? ")
+    hourString = input("How many hours can you work this session? ")
+    minutesString = input("How many minutes in addition to that? ")
     hours = int(hourString)
     minutes = int(minutesString)
     session = Pomodoro()

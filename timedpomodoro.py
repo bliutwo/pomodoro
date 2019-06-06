@@ -11,7 +11,7 @@ import time
 
 def clear_screen():
     for i in range(0, 100):
-        print ""
+        print("")
 
 # TODO: comment or uncomment print \a vs playSound
 # takes amount in seconds, sesh is a Pomodoro instance
@@ -23,10 +23,10 @@ def time_remaining(amount, sesh, globaltimer):
         if (orig_amount == sesh.get_breaktime() or orig_amount == \
             sesh.get_longbreak()):
             for i in range(0,10):
-                print "ON BREAK ON BREAK ON BREAK ON BREAK ON BREAK ON BREAK"
-            print "\nBreak timer: %d minutes and %d seconds remaining. ON BREAK!!!" % ((amount / 60), (amount % 60))
+                print("ON BREAK ON BREAK ON BREAK ON BREAK ON BREAK ON BREAK")
+            print("\nBreak timer: %d minutes and %d seconds remaining. ON BREAK!!!" % ((amount / 60), (amount % 60)))
         else:    
-            print "\nPomodoro timer: %d minutes and %d seconds remaining." % ((amount / 60), (amount % 60))
+            print("\nPomodoro timer: %d minutes and %d seconds remaining." % ((amount / 60), (amount % 60)))
         amount = amount - 1
         if (globaltimer != None):
             if globaltimer.done():
@@ -62,8 +62,8 @@ def execute_pomodoro(session, globaltimer):
 
     playSound("./exclamation.mp3")
     #print "\a"
-    print "\nExiting."
-    print "DONE! ctrl + c to exit"
+    print("\nExiting.")
+    print("DONE! ctrl + c to exit")
     playSound("./abadis.mp3")
 
 def main():
