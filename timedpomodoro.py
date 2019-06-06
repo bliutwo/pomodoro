@@ -24,7 +24,7 @@ def time_remaining(amount, sesh, globaltimer):
             sesh.get_longbreak()):
             for i in range(0,10):
                 print "ON BREAK ON BREAK ON BREAK ON BREAK ON BREAK ON BREAK"
-            print "\nBreak timer: %d minutes and %d seconds remaining." % ((amount / 60), (amount % 60))
+            print "\nBreak timer: %d minutes and %d seconds remaining. ON BREAK!!!" % ((amount / 60), (amount % 60))
         else:    
             print "\nPomodoro timer: %d minutes and %d seconds remaining." % ((amount / 60), (amount % 60))
         amount = amount - 1
