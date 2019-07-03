@@ -2,7 +2,7 @@
 
 Small python scripts designed to help with productivity.
 
-Uses Python 3! 
+Uses Python 3! As far as I know, it still works with Python 2.
 
 Usage: 
 
@@ -10,14 +10,25 @@ Usage:
 python3 custom_pomodoro.py
 ```
 
-- Requires pygame.
-- [Official pygame installation instructions](https://www.pygame.org/wiki/GettingStarted)
-- [Installing pygame](https://www.pygame.org/wiki/GettingStarted) (this only installs pygame for Python 3)
-- [Installing pygame (Mac) for Python 2](https://stackoverflow.com/questions/20968480/installing-pygame-module-for-python-2-7-5-on-terminal)
+**OR**
+
+```
+python custom_pomodoro.py
+```
+
+## Pygame
+
+Running this requires installation of pygame.
+
+- Here are the [official pygame installation instructions](https://www.pygame.org/wiki/GettingStarted).
+
+Alternatives if that doesn't work:
+
 - [PyGame Installation Mac OS X](https://stackoverflow.com/questions/30743194/pygame-installation-mac-os-x)
+- [Installing pygame (Mac) for Python 2](https://stackoverflow.com/questions/20968480/installing-pygame-module-for-python-2-7-5-on-terminal)
 - [Old Ask Ubuntu forum on installing Pygame](https://www.pygame.org/wiki/GettingStarted)
 
-Wikipedia page here: https://en.wikipedia.org/wiki/Pomodoro_Technique
+[Wikipedia page](https://www.pygame.org/wiki/GettingStarted) about Pomodoro Technique.
 
 TODO:
 
