@@ -39,6 +39,11 @@ class Pomodoro (object):
     def set_goal(self, customGoal):
         self.goal = customGoal
         self.remainingPomo = self.set_remaining_pomo(customGoal)
+    # set the length of a pomodoro in minutes, takes customPomo in minutes
+    def set_pomo(self, customPomo):
+        self.pomodoro  = customPomo
+        self.breaktime = customPomo / 5.0
+        self.longbreak = self.breaktime * 3
     # returns remainingPomo, takes customGoal in minutes
     def set_remaining_pomo(self, customGoal):
         divisor = ((self.pomodoro + self.breaktime) * self.dividend) - self.breaktime

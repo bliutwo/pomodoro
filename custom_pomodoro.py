@@ -15,8 +15,10 @@ from global_timer import *
 def main():
     hourString = input("How many hours can you work this session? ")
     minutesString = input("How many minutes in addition to that? ")
+    pomodoroString = input("How long do you want each Pomodoro to be (in minutes)? ")
     hours = int(hourString)
     minutes = int(minutesString)
+    pomodoro_length = int(pomodoroString)
     session = Pomodoro()
     seconds = (hours * 3600) + (minutes * 60)
     globaltimer = GlobalTimer()
@@ -27,6 +29,7 @@ def main():
     if (totalTime < pomodoroInMinutes):
         totalTime = pomodoroInMinutes
     session.set_goal(totalTime)
+    session.set_pomo(pomodoro_length)
     execute_pomodoro(session, globaltimer)
 
 if __name__ == "__main__":
