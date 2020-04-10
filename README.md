@@ -1,12 +1,14 @@
 # 2020 Update
 
+[The old README can be found here](#pomodoro-python-script).
+
 I've been trying to create a good, cross-platform GUI for this, as can be seen
 [here](https://github.com/bliutwo/pomodoro_django) and my research into
 [QtCreator](https://doc.qt.io/qtcreator/index.html). I figured that Python must
 have its own GUI-app type framework, so I found, from the [Python Wiki](https://wiki.python.org/moin/GuiProgramming),
 [appJar](http://appjar.info/), which is something like Tkinter (something that
 Andy, my old, flakey project partner put into the project specifications of a
-[project that I ended up doing on my own ](https://github.com/bliutwo/disease-ontology)).
+[project that I ended up doing on my own](https://github.com/bliutwo/disease-ontology)).
 
 So I'll be making an app using appJar to make this a reality. Hopefully, it will
 be a "double click this to run it" app that is easy to use for all kinds of
@@ -21,12 +23,30 @@ people, whether they are technologically literate or not.
 $ pip3 install appjar
 ```
 
-Now that I've got appJar working, I should try creating a basic GUI app.
+Now that I've got appJar installed, I should try creating a basic GUI app.
 
-- [ ] Create a basic GUI app.
+- [x] Create a basic GUI app.
+
+Seems like I want to have basic input and output, so I'm going to check out
+[input widgets](http://appjar.info/inputWidgets/) followed by
+[output widgets](http://appjar.info/outputWidgets/).
+
+- [ ] Check out
+[input widgets](http://appjar.info/inputWidgets/).
+- [ ] Check out [output widgets](http://appjar.info/outputWidgets/).
+
+I'll eventually also need sound for my alarms so I'll check out
+[sound](http://appjar.info/pythonSound/) for that.
+
+- [ ] Check out [sound](http://appjar.info/pythonSound/).
+
+I also want to see if [Toolbars, Menubars, and Statusbars](http://appjar.info/pythonBars/)
+would be applicable for my app--that is, I want to be able to see at all times
+what the status of my Pomodoro is.
+
+- [ ] Check out and see if applicable: [Toolbars, Menubars, and Statusbars](http://appjar.info/pythonBars/)
+
 - [ ] Mold this basic GUI app into what I need for Pomodoro.
-
-*Old README is below.*
 
 # Pomodoro Python script
 
