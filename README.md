@@ -1,10 +1,40 @@
+# 2020 Update
+
+I've been trying to create a good, cross-platform GUI for this, as can be seen
+[here](https://github.com/bliutwo/pomodoro_django) and my research into
+[QtCreator](https://doc.qt.io/qtcreator/index.html). I figured that Python must
+have its own GUI-app type framework, so I found, from the [Python Wiki](https://wiki.python.org/moin/GuiProgramming),
+[appJar](http://appjar.info/), which is something like Tkinter (something that
+Andy, my old, flakey project partner put into the project specifications of a
+[project that I ended up doing on my own ](https://github.com/bliutwo/disease-ontology)).
+
+So I'll be making an app using appJar to make this a reality. Hopefully, it will
+be a "double click this to run it" app that is easy to use for all kinds of
+people, whether they are technologically literate or not.
+
+## TODO
+
+- [x] Figure out how to import appJar onto my PC.
+  - [x] Run the following command:
+
+```bash
+$ pip3 install appjar
+```
+
+Now that I've got appJar working, I should try creating a basic GUI app.
+
+- [ ] Create a basic GUI app.
+- [ ] Mold this basic GUI app into what I need for Pomodoro.
+
+*Old README is below.*
+
 # Pomodoro Python script
 
 Small python scripts designed to help with productivity.
 
 Uses Python 3! As far as I know, it still works with Python 2.
 
-Usage: 
+Usage:
 
 ```
 python3 custom_pomodoro.py
