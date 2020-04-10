@@ -27,6 +27,11 @@ Now that I've got appJar installed, I should try creating a basic GUI app.
 
 - [x] Create a basic GUI app.
 
+- [x] Mold this basic GUI app into what I need for Pomodoro.
+
+- [ ] Find out how to control the logic of the buttons
+- [ ] Find out how to have changing display over time
+
 Seems like I want to have basic input and output, so I'm going to check out
 [input widgets](http://appjar.info/inputWidgets/) followed by
 [output widgets](http://appjar.info/outputWidgets/).
@@ -45,8 +50,6 @@ would be applicable for my app--that is, I want to be able to see at all times
 what the status of my Pomodoro is.
 
 - [ ] Check out and see if applicable: [Toolbars, Menubars, and Statusbars](http://appjar.info/pythonBars/)
-
-- [ ] Mold this basic GUI app into what I need for Pomodoro.
 
 # Pomodoro Python script
 
