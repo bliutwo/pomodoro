@@ -116,12 +116,51 @@ on button press "submit":
         new frame is populated with only (sample) timer text
 ```
 
-- [ ] Implement above pseudocode.
+- [x] ~~Implement above pseudocode.~~ This is the wrong approach. I need to open and close windows.
+
+One thing I don't understand is how they stop frames before starting and stopping the app.
+Maybe I just need to start and stop the app itself?
+
+I might need [Multiple Windows](http://appjar.info/pythonSubWindows/).
+
+- [x] ~~Redefine existing GUI in terms of a window that I can show/hide.~~
+
+I actually want to go to a different page upon starting the timer via [Multiple Pages](http://appjar.info/multiplePages/).
+
+According to [Emptying Containers](http://appjar.info/multiplePages/#emptying-containers):
+
+> It's possible to quickly delete all widgets in a container, and then recreate them:
+
+It might be another thing to just put a frame on top. But then how can I resize the window?
+
+Let's just try to launch a new window upon "Start".
+
+- [x] Go to a new page/window upon "Start".
+
+Maybe I can delete all widgets in the current window, and then display one?
+
+- [x] ~~delete all widgets in the~~ Destroy current window, and then display one.
 
 Let's see if I can update a Label continuously over time (and subsequently,
 the meter).
 
 - [ ] Try to update a Label continuously over time.
+
+It looks like integrating my existing Python classes won't be as simple as I
+initially thought. I have a bunch of classes that don't directly allow me to
+display and return a "timer," per se. I'll need to write a class file that
+does exactly what I just described.
+
+- [ ] Write a Python class file that directly interacts with my Pomodoro.
+  - Ideally, all it does is allow me to do the following things:
+    - Input initial time required.
+    - Output time remaining (for current pomodoro / break and global).
+    - Allow me to decrement the time remaining (for each second that passes).
+
+One issue right now is that once I start the timer, if I press "close" on that
+window, it doesn't close the application (i.e. terminal hangs).
+
+- [ ] Implement "if close timer window, close entire application."
 
 Also, ideally, I'd be able to resize the app to take up minimal space.
 

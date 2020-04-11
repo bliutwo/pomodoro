@@ -1,6 +1,6 @@
 import sys
 sys.dont_write_bytecode = True
-# from Pomodoro import *
+from Pomodoro import *
 # from timedpomodoro import *
 # from global_timer import *
 
@@ -12,20 +12,23 @@ def main():
     def press(button):
         if button == "Cancel":
             app.stop()
-        else:
+        elif button == "Start":
             hours = app.getEntry("Hours to work:")
             minutes = app.getEntry("Minutes to work:")
             pomodoro = app.getEntry("Length of pomodoro:")
             print("hours:", hours, "minutes:", minutes, "pomodoro", pomodoro)
+            app.destroySubWindow("main")
+            app.showSubWindow("timer")
 
     # create a GUI variable called app
-    # app = gui()
+    app = gui()
 
     # specify name and size for GUI
-    app = gui("Pomodoro Timer", "400x200")
+    # app = gui("Pomodoro Timer", "400x200")
 
     # change general appearance of GUI
     # app.setBg("orange")
+    app.startSubWindow("main", "Welcome to Pomodoro Timer")
     app.setFont(18)
 
     # add & configure widgets - widgets get a name, to help referencing them later
@@ -42,9 +45,15 @@ def main():
 
     # link the buttons to the function called press
     app.addButtons(["Start", "Cancel"], press)
+    app.stopSubWindow()
+
+    app.startSubWindow("timer", modal = False)
+    app.addLabel("time", "00:00")
+    app.addGrip(0,1)
+    app.stopSubWindow()
 
     # start the GUI (don't put any code after this line)
-    app.go()
+    app.go(startWindow="main")
 
 if __name__ == "__main__":
     main()
