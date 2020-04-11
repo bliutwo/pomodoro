@@ -17,6 +17,26 @@ people, whether they are technologically literate or not.
 
 ## TODO
 
+### Latest / Current TODO(s)
+
+It looks like integrating my existing Python classes won't be as simple as I
+initially thought. I have a bunch of classes that don't directly allow me to
+display and return a "timer," per se. I'll need to write a class file that
+does exactly what I just described.
+
+- [ ] Write a Python class file that directly interacts with my Pomodoro.
+  - Ideally, all it does is allow me to do the following things:
+    - Input initial time required.
+    - Output time remaining (for current pomodoro / break and global).
+    - Allow me to decrement the time remaining (for each second that passes).
+
+Let's see if I can update a Label continuously over time (and subsequently,
+the meter).
+
+- [ ] Try to update a Label continuously over time.
+
+### History
+
 - [x] Figure out how to import appJar onto my PC.
   - [x] Run the following command:
 
