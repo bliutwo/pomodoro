@@ -89,9 +89,34 @@ two.
 I'll have to see if I can somehow "reset" the application display before I display
 a Label output widget.
 
-- [ ] Find out if you can:
-  - [ ] "reset" the application display
-  - [ ] repopulate with a single Label (and later, Meter and Grip)
+- [x] Find out if you can:
+  - [x] "reset" the application display [**Frames**](http://appjar.info/pythonWidgetGrouping/#frame)
+  - [x] repopulate with a single Label (and later, Meter and Grip) **Start and stop Frames.**
+
+Looks like what I need are [Grouping Widgets](http://appjar.info/pythonWidgetGrouping/).
+
+> It's sometimes desirable to group widgets together within a window.
+> Or to have multiple *pages* of widgets.
+
+I'll probably want a [Frame Stack](http://appjar.info/pythonWidgetGrouping/#frame-stack) to
+~~"reset" the application display~~ stack the timer on top of the the initial GUI.
+
+But don't I want to just reset and resize the display?
+
+[Frames](http://appjar.info/pythonWidgetGrouping/#frame) are what I want. I can
+start and stop frames.
+
+So what I want is:
+
+```
+refactor everything so far into a frame
+on button press "submit":
+    stop the current frame
+    start a new frame
+        new frame is populated with only (sample) timer text
+```
+
+- [ ] Implement above pseudocode.
 
 Let's see if I can update a Label continuously over time (and subsequently,
 the meter).
@@ -101,7 +126,7 @@ the meter).
 Also, ideally, I'd be able to resize the app to take up minimal space.
 
 - [ ] See if can resize the app via code.
-- [ ] See if can resize the app via normal user window resizing.
+- [x] See if can resize the app via normal user window resizing. **Probably via [Paned Frames](http://appjar.info/pythonWidgetGrouping/#paned-frame)**.
 
 I'll eventually also need sound for my alarms so I'll check out
 [sound](http://appjar.info/pythonSound/) for that.
