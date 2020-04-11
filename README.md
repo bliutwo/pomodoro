@@ -4,7 +4,8 @@
 
 I've been trying to create a good, cross-platform GUI for this, as can be seen
 [here](https://github.com/bliutwo/pomodoro_django) and my research into
-[QtCreator](https://doc.qt.io/qtcreator/index.html). I figured that Python must
+[QtCreator](https://doc.qt.io/qtcreator/index.html), and also the [original README](#pomodoro-python-script)
+in which I talked about making a good GUI way back in 2015 or so. I figured that Python must
 have its own GUI-app type framework, so I found, from the [Python Wiki](https://wiki.python.org/moin/GuiProgramming),
 [appJar](http://appjar.info/), which is something like Tkinter (something that
 Andy, my old, flakey project partner put into the project specifications of a
@@ -26,9 +27,7 @@ $ pip3 install appjar
 Now that I've got appJar installed, I should try creating a basic GUI app.
 
 - [x] Create a basic GUI app.
-
 - [x] Mold this basic GUI app into what I need for Pomodoro.
-
 - [ ] Find out how to control the logic of the buttons
 - [ ] Find out how to have changing display over time
 
@@ -36,8 +35,14 @@ Seems like I want to have basic input and output, so I'm going to check out
 [input widgets](http://appjar.info/inputWidgets/) followed by
 [output widgets](http://appjar.info/outputWidgets/).
 
-- [ ] Check out
+- [x] Check out
 [input widgets](http://appjar.info/inputWidgets/).
+
+Seems like I've gotten all the "input" I need. Now, let's see what I can do with
+output widgets. Maybe I can output what I was outputting before, anyway?
+
+Also, ideally, I'd be able to resize the app to take up minimal space.
+
 - [ ] Check out [output widgets](http://appjar.info/outputWidgets/).
 
 I'll eventually also need sound for my alarms so I'll check out
