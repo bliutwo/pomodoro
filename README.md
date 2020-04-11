@@ -38,7 +38,8 @@ Seems like I want to have basic input and output, so I'm going to check out
 - [x] Check out
 [input widgets](http://appjar.info/inputWidgets/).
 
-Seems like I've gotten all the "input" I need. Now, let's see what I can do with
+Seems like I've gotten all the "input" I need already just by
+modifying the original `gui.py` file. Now, let's see what I can do with
 output widgets. Maybe I can output what I was outputting before, anyway?
 
 - [x] Check out [output widgets](http://appjar.info/outputWidgets/).
@@ -47,7 +48,55 @@ So in order to display my timer, I want to find out what the right output widget
 actually is. I'm going to research a few possibilities, and write down a few that
 I find might be relevant:
 
-- [ ] Research different output widgets.
+- [x] Research different output widgets.
+  - Is there a "timer" or "clock" output widget?
+  - **Label**: Maybe I can have an algorithm (lol, should I even call it this) that
+    updates the label every second?
+  - **Message**: This seems just like what I already have, but it doesn't seem appropriate
+    because 1) it seems to be a place that stores a *lot* of text, and I *don't*
+    want to store a *lot* of text; 2) I want a small amount of text. I guess
+    these two go hand in hand.
+  - **Meter**: I definitely want this. I put a TODO checkbox for this.
+  - **Separator**: Separates widgets, but I'm not sure I'll have multiple widgets,
+    and it also looks as if *Label* already does that somewhat.
+  - **Grip**: "Clickable icon to drag the window around." I think I want this.
+    Adding a TODO.
+  - **Canvas**: Looks cool, but I don't want to draw anything for this one.
+    Maybe I'll use this in the future?
+  - **Turtle**: A turtle widget.
+    Apparently, [turtle graphics](https://docs.python.org/3.6/library/turtle.html)
+    are a popular way for introducing programming to kids. Maybe I'll check that out
+    later if I want to make educational material.
+  - **Microbit**: [Microbit emulator.](http://appjar.info/outputWidgets/#microbit-emulator).
+    Here's [Microbit's main page](https://microbit.org/). Seems cool. I don't really
+    know much about it. Apparently it's educational.
+  - [**Google Maps**](http://appjar.info/outputWidgets/#googlemaps): Honestly,
+    this seems really cool, and I'd want to make some GUI app that uses this.
+  - **PieChart**: "Widget to depict a Pie Chart."
+  - [**MatPlotLib**](http://appjar.info/outputWidgets/#matplotlib): Honestly,
+    (lol, I write "honestly" a lot) I could use this to make a GUI app to replace my
+    [django-glicko2](https://github.com/bliutwo/django-glicko2) website.
+
+Sounds like my main output widgets are:
+
+- Label
+- Meter
+- Grip
+
+We'll work on these one at a time, and I already have TODOs made for the latter
+two.
+
+I'll have to see if I can somehow "reset" the application display before I display
+a Label output widget.
+
+- [ ] Find out if you can:
+  - [ ] "reset" the application display
+  - [ ] repopulate with a single Label (and later, Meter and Grip)
+
+Let's see if I can update a Label continuously over time (and subsequently,
+the meter).
+
+- [ ] Try to update a Label continuously over time.
 
 Also, ideally, I'd be able to resize the app to take up minimal space.
 
@@ -69,6 +118,10 @@ I want to have a progress bar that displays actual overall progress (unlike
 my jank setup that doesn't work in the script).
 
 - [ ] Add a progress bar ([meter](http://appjar.info/outputWidgets/#meter)) that is properly calculated.
+
+I want a grip that allows me to move this thing around wherever I want.
+
+- [ ] Add a [grip output widget](http://appjar.info/outputWidgets/#grip).
 
 # Pomodoro Python script
 
