@@ -41,9 +41,18 @@ Seems like I want to have basic input and output, so I'm going to check out
 Seems like I've gotten all the "input" I need. Now, let's see what I can do with
 output widgets. Maybe I can output what I was outputting before, anyway?
 
+- [x] Check out [output widgets](http://appjar.info/outputWidgets/).
+
+So in order to display my timer, I want to find out what the right output widget
+actually is. I'm going to research a few possibilities, and write down a few that
+I find might be relevant:
+
+- [ ] Research different output widgets.
+
 Also, ideally, I'd be able to resize the app to take up minimal space.
 
-- [ ] Check out [output widgets](http://appjar.info/outputWidgets/).
+- [ ] See if can resize the app via code.
+- [ ] See if can resize the app via normal user window resizing.
 
 I'll eventually also need sound for my alarms so I'll check out
 [sound](http://appjar.info/pythonSound/) for that.
@@ -55,6 +64,11 @@ would be applicable for my app--that is, I want to be able to see at all times
 what the status of my Pomodoro is.
 
 - [ ] Check out and see if applicable: [Toolbars, Menubars, and Statusbars](http://appjar.info/pythonBars/)
+
+I want to have a progress bar that displays actual overall progress (unlike
+my jank setup that doesn't work in the script).
+
+- [ ] Add a progress bar ([meter](http://appjar.info/outputWidgets/#meter)) that is properly calculated.
 
 # Pomodoro Python script
 
