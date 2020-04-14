@@ -1,5 +1,7 @@
 # 2020 Update
 
+
+
 [The old README can be found here](#pomodoro-python-script).
 
 I've been trying to create a good, cross-platform GUI for this, as can be seen
@@ -16,6 +18,13 @@ be a "double click this to run it" app that is easy to use for all kinds of
 people, whether they are technologically literate or not.
 
 ## TODO
+
+**4/13/2020 UPDATE:** According to [this answer](https://stackoverflow.com/questions/2933/how-can-i-create-a-directly-executable-cross-platform-gui-app-using-python),
+there are other Python GUI libraries that might be better suited for this.
+For the purpose of exporting the program as an executable binary, I might want
+to use [PyInstaller](https://www.pyinstaller.org/) on top of this appJar business.
+
+- [ ] Try using [PyInstaller](https://www.pyinstaller.org/) to bundle the appJar Python GUI program as a Windows executable.
 
 ### Latest / Current TODO(s)
 
