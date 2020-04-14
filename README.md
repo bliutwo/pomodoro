@@ -203,6 +203,11 @@ my jank setup that doesn't work in the script).
 
 - [ ] Add a progress bar ([meter](http://appjar.info/outputWidgets/#meter)) that is properly calculated.
 
+Moreover, for this progress bar, I want it to be able to show a color depending on what I'm doing.
+For example, red for breaktime, green for worktime.
+
+- [ ] Find out if you can change the color of the progress bar (given that you can update it continuously over time, like the Label).
+
 I want a grip that allows me to move this thing around wherever I want.
 
 - [ ] Add a [grip output widget](http://appjar.info/outputWidgets/#grip).
