@@ -1,7 +1,5 @@
 # 2020 Update
 
-
-
 [The old README can be found here](#pomodoro-python-script).
 
 I've been trying to create a good, cross-platform GUI for this, as can be seen
