@@ -19,7 +19,7 @@ people, whether they are technologically literate or not.
 
 ### Latest / Current TODO(s)
 
-- [ ] Display background corresponding to what the session is (pomodoro, break). Maybe red for pomodoro, green for break?
+- [ ] Add a progress bar ([meter](http://appjar.info/outputWidgets/#meter)) that is properly calculated.
 
 ### History
 
@@ -236,7 +236,7 @@ Actually, the unstoppable timer issue isn't as important. What I really need to 
 
 - [x] Display the Pomodoro timer ~~on top of~~ ~~next to the~~ on top of the global timer.
 
-- [ ] Display background corresponding to what the session is (pomodoro, break). Maybe red for pomodoro, green for break?
+- [x] Display background corresponding to what the session is (pomodoro, break). Maybe red for pomodoro, green for break?
 
 #### History (continued)
 
@@ -271,7 +271,7 @@ Also, ideally, I'd be able to resize the app to take up minimal space.
 I'll eventually also need sound for my alarms so I'll check out
 [sound](http://appjar.info/pythonSound/) for that.
 
-- [ ] Check out [sound](http://appjar.info/pythonSound/).
+- [x] Check out [sound](http://appjar.info/pythonSound/).
 
 I also want to see if [Toolbars, Menubars, and Statusbars](http://appjar.info/pythonBars/)
 would be applicable for my app--that is, I want to be able to see at all times

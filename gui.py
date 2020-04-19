@@ -13,15 +13,16 @@ def main():
         if button == "Cancel":
             app.stop()
         elif button == "Start":
-            hours = app.getEntry("Hours to work:")
-            minutes = app.getEntry("Minutes to work:")
-            custom_pomo = app.getEntry("Length of pomodoro:")
+            hours = app.getEntry("How many hours can you work this session?")
+            minutes = app.getEntry("How many minutes in addition to that?")
+            custom_pomo = app.getEntry("How long do you want each Pomodoro to be (in minutes)?")
             print("hours:", hours, "minutes:", minutes, "custom_pomo", custom_pomo)
             pomodoro = interact.InteractivePomodoro(hours, minutes, custom_pomo)
             app.hideSubWindow("main")
             app.startSubWindow("Pomodoro", modal = False)
-            global_time = "%s\n%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
+            global_time = "%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
             app.addLabel("global_time", global_time)
+            app.setLabelBg("global_time", "red")
             app.addGrip(0,1)
             app.showSubWindow("Pomodoro")
             app.stopSubWindow()
@@ -38,7 +39,8 @@ def main():
                 else:
                     app.clearLabel("global_time")
                     pomodoro.decrement_time_remaining()
-                    global_time = "%s\n%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
+                    global_time = "%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
+                    color = "red"
                     if pomodoro.one_second_remaining():
                         if pomodoro.break_status():
                             if os.name == 'nt':
@@ -51,6 +53,11 @@ def main():
                             else:
                                 app.bell()
                     app.setLabel("global_time", global_time)
+                    if pomodoro.break_status():
+                        color = "green"
+                    else:
+                        color = "red"
+                    app.setLabelBg("global_time", color)
                     app.showSubWindow("Pomodoro")
             # takes time in milliseconds
             app.setPollTime(10)
@@ -69,12 +76,12 @@ def main():
     app.setLabelBg("title", "red")
 
     # input widget (EntryBox) for the user to type in
-    app.addLabelNumericEntry("Hours to work:")
-    app.addLabelNumericEntry("Minutes to work:")
-    app.addLabelNumericEntry("Length of pomodoro:")
+    app.addLabelNumericEntry("How many hours can you work this session?")
+    app.addLabelNumericEntry("How many minutes in addition to that?")
+    app.addLabelNumericEntry("How long do you want each Pomodoro to be (in minutes)?")
 
     # specify where you want the cursor to be when the GUI starts
-    app.setFocus("Hours to work:")
+    app.setFocus("How many hours can you work this session?")
 
     # link the buttons to the function called press
     app.addButtons(["Start", "Cancel"], press)
