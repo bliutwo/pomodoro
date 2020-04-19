@@ -159,7 +159,7 @@ Let's just try to launch a new window upon "Start".
 
 Maybe I can delete all widgets in the current window, and then display one?
 
-- [x] ~~delete all widgets in the~~ Destroy current window, and then display one.
+- [x] ~~delete all widgets in the~~ ~~Destroy~~ Hide current window, and then display one.
 
 Let's see if I can update a Label continuously over time (and subsequently,
 the meter).
@@ -181,6 +181,11 @@ One issue right now is that once I start the timer, if I press "close" on that
 window, it doesn't close the application (i.e. terminal hangs).
 
 - [ ] Implement "if close timer window, close entire application."
+
+There's another nuance: pressing "cancel" closes the application (currently), but
+the terminal hang occurs *even on the main window.* How do I grab the event of "pressing the X to close" button?
+
+- [ ] Grab the event of "pressing the X to close" button.
 
 Also, ideally, I'd be able to resize the app to take up minimal space.
 
