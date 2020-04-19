@@ -65,7 +65,7 @@ def main():
                     app.setLabelBg("global_time", color)
                     app.showSubWindow("Pomodoro")
             # takes time in milliseconds
-            app.setPollTime(10)
+            app.setPollTime(1000)
             app.registerEvent(decrement_timer)
 
 
