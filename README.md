@@ -19,8 +19,13 @@ people, whether they are technologically literate or not.
 
 ### Latest / Current TODO(s)
 
-- [ ] Write a Python class file that directly interacts with my Pomodoro.
-- [x] Try to update a Label continuously over time.
+So I'm able to update the Label continuously over time, but two new problems have arisen:
+
+- The updates don't actually correspond to one second.
+- It's impossible to stop the timer (even with red X or ctrl+C on the keyboard in the terminal) unless I stop the "Python" task in task manager.
+
+- [ ] Get the updates to correspond to one second.
+- [ ] Fix the unstoppable timer issue mentioned above.
 
 ### Pomodoro Interactive Wrapper
 
@@ -32,7 +37,7 @@ initially thought. I have a bunch of classes that don't directly allow me to
 display and return a "timer," per se. I'll need to write a class file that
 does exactly what I just described.
 
-- [ ] Write a Python class file that directly interacts with my Pomodoro.
+- [x] Write a Python class file that directly interacts with my Pomodoro.
   - Ideally, all it does is allow me to do the following things:
     - Input initial time required.
     - Output time remaining (for current pomodoro / break and global).
