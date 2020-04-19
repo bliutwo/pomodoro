@@ -14,18 +14,17 @@ def clear_screen():
         print("")
 
 # TODO: comment or uncomment print \a vs playSound
-# takes amount in seconds, sesh is a Pomodoro instance
-def time_remaining(amount, sesh, globaltimer):
+# takes amount in seconds, session is a Pomodoro instance
+def time_remaining(amount, session, globaltimer):
     orig_amount = amount
     while amount != 0:
         clear_screen()
-        sesh.printProgress()
-        if (orig_amount == sesh.get_breaktime() or orig_amount == \
-            sesh.get_longbreak()):
+        session.printProgress()
+        if (orig_amount == session.get_breaktime() or orig_amount == session.get_longbreak()):
             for i in range(0,10):
                 print("ON BREAK ON BREAK ON BREAK ON BREAK ON BREAK ON BREAK")
             print("\nBreak timer: %d minutes and %d seconds remaining. ON BREAK!!!" % ((amount / 60), (amount % 60)))
-        else:    
+        else:
             print("\nPomodoro timer: %d minutes and %d seconds remaining." % ((amount / 60), (amount % 60)))
         amount = amount - 1
         if (globaltimer != None):
@@ -68,10 +67,10 @@ def execute_pomodoro(session, globaltimer):
 
 def main():
     # 27 minutes and 30 seconds = 1650 seconds
-    sash = Pomodoro()
-    sash.printProgress()
+    session = Pomodoro()
+    session.printProgress()
 
-    execute_pomodoro(sash, None)
+    execute_pomodoro(session, None)
 
 if __name__ == "__main__":
     main()

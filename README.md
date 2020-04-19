@@ -19,6 +19,25 @@ people, whether they are technologically literate or not.
 
 ### Latest / Current TODO(s)
 
+- [ ] Write a Python class file that directly interacts with my Pomodoro.
+- [ ] Try to update a Label continuously over time.
+
+
+
+
+
+
+
+
+
+
+
+
+### Pomodoro Interactive Wrapper
+
+In this section, I'll cover how I implement the interface between the GUI and
+the Pomodoro, globaltimer, etc. classes.
+
 It looks like integrating my existing Python classes won't be as simple as I
 initially thought. I have a bunch of classes that don't directly allow me to
 display and return a "timer," per se. I'll need to write a class file that
@@ -30,15 +49,48 @@ does exactly what I just described.
     - Output time remaining (for current pomodoro / break and global).
     - Allow me to decrement the time remaining (for each second that passes).
 
-Let's see if I can update a Label continuously over time (and subsequently,
-the meter).
+There are two aspects to this:
 
-- [ ] Try to update a Label continuously over time.
+- "session" timer
+- "global" timer
 
-### Pomodoro Interactive Wrapper
+In the first one, we need to find out if we are on a break or Pomodoro work session.
+In the second, we need to find out the total time remaining.
 
-So in this section, I'll cover how I implement the interface between the GUI and
-the Pomodoro, globaltimer, etc. classes.
+The second one seems to be taken care of mostly by `global_timer.py`.
+
+The first one seems like it might be tricky, but we implemented what that would look like in `custom_pomodoro.py`.
+Let's see how it's implemented there.
+
+So according to `custom_pomodoro.py`, we'll want to make a `session = Pomodoro()` and `session.set_goal()` and `session.set_pomo()`.
+(The `session.set_pomo()` may be optional, but we'll see if we need it when we define each one.)
+At the same time, we'll want to make a `globaltimer = GlobalTimer()` and then `globaltimer.set_timer(seconds)`.
+
+- `session.set_goal()`: "set the goal in minutes, takes customGoal in minutes." ~~This is specifically to do with the "number of Pomodoro" remaining, but we can cover more details later~~ This might mean that we can set how long we want our session to be? It seems not exactly right, so I'll do more research later.
+- `session.set_pomo()`: "set the length of a pomodoro in minutes, takes customPomo in minutes." This means that we can give it the number of minutes we want each Pomodoro to be.
+- `session.get_pomodoro()`: "returns pomodoro amount in seconds." Is this used to return whether we're on a break or long break? Yes. ~~If `session.get_pomodoro() % 4 == 0`, then we get a long break. Else, it's a regular break.~~ But not in that way.
+
+We also want to check `timedpomodoro.py` because that has the `execute_pomodoro` function, which takes in a `session = Pomodoro()` and a `globaltimer = GlobalTimer()` as parameters.
+
+An important distinction is that `Pomodoro()` itself only keeps track of a few things
+
+- Pomodori so far
+- Whether we're on break
+- ~~How much time remains in a single pomodoro~~
+
+Importantly, it doesn't keep track of how much time is left in a single pomodoro.
+
+Let's try to output the global timer first.
+
+- [ ] Output global timer values and display it on the GUI.
+
+
+
+
+
+
+
+
 
 ### History
 
@@ -171,17 +223,6 @@ the meter).
 
 - [ ] Try to update a Label continuously over time.
 
-It looks like integrating my existing Python classes won't be as simple as I
-initially thought. I have a bunch of classes that don't directly allow me to
-display and return a "timer," per se. I'll need to write a class file that
-does exactly what I just described.
-
-- [ ] Write a Python class file that directly interacts with my Pomodoro.
-  - Ideally, all it does is allow me to do the following things:
-    - Input initial time required.
-    - Output time remaining (for current pomodoro / break and global).
-    - Allow me to decrement the time remaining (for each second that passes).
-
 One issue right now is that once I start the timer, if I press "close" on that
 window, it doesn't close the application (i.e. terminal hangs).
 
@@ -237,7 +278,7 @@ This doesn't work yet because of some stuff I need to add (such as [favicon.ico]
 
 - [PowerPom - Pomodoro Timer](https://www.microsoft.com/en-us/p/powerpom-pomodoro-timer/9p5zscl5qc8w?activetab=pivot:overviewtab): In this one, I don't see an option to make it a tiny part of the screen. Moreover, it has ads. Yuck.
 - [Focus Booster App](https://www.focusboosterapp.com/download): 30-day trial. Also yuck.
-- [Top 10 Free and Open Source Pomodoro Apps](https://medevel.com/top-10-free-and-open-source-pomodoro-apps-for-windows-macos-and-linux/): The problem is that these don't do *exactly* what I want it to do, and the one always-on-top option seems too big.
+- [Top 10 Free and Open Source Pomodoro Apps](https://medevel.com/top-10-free-and-open-source-pomodoro-apps-for-windows-macos-and-linux/): The problem is that these don't do *exactly* what I want it to do, and the windows themselves (in the case of having any of them always-on-top) seem too big.
 
 # Pomodoro Python script
 

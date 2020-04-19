@@ -19,3 +19,9 @@ class GlobalTimer (object):
     def done(self):
         if (self.remaining == 0): print("\a")
         return (self.remaining == 0)
+    # gets the time remaining: hours, minutes, seconds
+    def remainder(self):
+        h = self.remaining / 3600
+        m = self.remaining / 60 % 60
+        s = self.remaining % 60
+        return int(h), int(m), int(s)

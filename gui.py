@@ -1,8 +1,9 @@
 import sys
 sys.dont_write_bytecode = True
-from Pomodoro import *
+# from Pomodoro import *
 # from timedpomodoro import *
 # from global_timer import *
+import interact
 
 # import the (appJar) library
 from appJar import gui
@@ -15,9 +16,16 @@ def main():
         elif button == "Start":
             hours = app.getEntry("Hours to work:")
             minutes = app.getEntry("Minutes to work:")
-            pomodoro = app.getEntry("Length of pomodoro:")
-            print("hours:", hours, "minutes:", minutes, "pomodoro", pomodoro)
+            custom_pomo = app.getEntry("Length of pomodoro:")
+            print("hours:", hours, "minutes:", minutes, "custom_pomo", custom_pomo)
+            pomodoro = interact.InteractivePomodoro(hours, minutes, custom_pomo)
             app.hideSubWindow("main")
+            # execute_pomodoro(session, globaltimer)
+            app.startSubWindow("timer", modal = False)
+            global_time = "%s:%s:%s" % pomodoro.output_remaining_time_strings()
+            app.addLabel("global_time", global_time)
+            app.addGrip(0,1)
+            app.stopSubWindow()
             app.showSubWindow("timer")
 
     # create a GUI variable called app
@@ -45,11 +53,6 @@ def main():
 
     # link the buttons to the function called press
     app.addButtons(["Start", "Cancel"], press)
-    app.stopSubWindow()
-
-    app.startSubWindow("timer", modal = False)
-    app.addLabel("time", "00:00")
-    app.addGrip(0,1)
     app.stopSubWindow()
 
     # start the GUI (don't put any code after this line)
