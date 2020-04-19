@@ -35,6 +35,11 @@ the meter).
 
 - [ ] Try to update a Label continuously over time.
 
+### Pomodoro Interactive Wrapper
+
+So in this section, I'll cover how I implement the interface between the GUI and
+the Pomodoro, globaltimer, etc. classes.
+
 ### History
 
 - [x] Figure out how to import appJar onto my PC.
@@ -227,6 +232,12 @@ to use [PyInstaller](https://www.pyinstaller.org/) on top of this appJar busines
 This doesn't work yet because of some stuff I need to add (such as [favicon.ico](https://stackoverflow.com/questions/18537918/why-isnt-ico-file-defined-when-setting-windows-icon)).
 
 - [ ] Fix the above-described bug when bundling Python script as a Windows executable.
+
+### Competing Pomodoro apps
+
+- [PowerPom - Pomodoro Timer](https://www.microsoft.com/en-us/p/powerpom-pomodoro-timer/9p5zscl5qc8w?activetab=pivot:overviewtab): In this one, I don't see an option to make it a tiny part of the screen. Moreover, it has ads. Yuck.
+- [Focus Booster App](https://www.focusboosterapp.com/download): 30-day trial. Also yuck.
+- [Top 10 Free and Open Source Pomodoro Apps](https://medevel.com/top-10-free-and-open-source-pomodoro-apps-for-windows-macos-and-linux/): The problem is that these don't do *exactly* what I want it to do, and the one always-on-top option seems too big.
 
 # Pomodoro Python script
 
