@@ -33,6 +33,8 @@ class PomodoroTimer(object):
         return int(m), int(s)
     def break_status(self):
         return self.onbreak
+    def one_second_remaining(self):
+        return self.remaining == 1
 
 class InteractivePomodoro(object):
     # usage: interface = InteractivePomodoro(hours, mins, pomodoro_length)
@@ -71,3 +73,9 @@ class InteractivePomodoro(object):
     def decrement_time_remaining(self):
         self.globaltimer.decrement()
         self.pomodoro_timer.decrement()
+    def done(self):
+        return self.globaltimer.done()
+    def break_status(self):
+        return self.pomodoro_timer.break_status()
+    def one_second_remaining(self):
+        return self.pomodoro_timer.one_second_remaining()

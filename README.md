@@ -19,7 +19,6 @@ people, whether they are technologically literate or not.
 
 ### Latest / Current TODO(s)
 
-- [ ] Play sounds to start breaks, pomodori, and when the global timer ends.
 - [ ] Display background corresponding to what the session is (pomodoro, break). Maybe red for pomodoro, green for break?
 
 ### History
@@ -243,7 +242,16 @@ Actually, the unstoppable timer issue isn't as important. What I really need to 
 
 So I've implemented the main logic of `interact.py`. Now I need to play sounds to start breaks, pomodori, and when the global timer ends.
 
-- [ ] Play sounds to start breaks, pomodori, and when the global timer ends.
+- [x] Play sounds to start breaks, pomodori, and when the global timer ends.
+  - [x] global timer end
+  - [x] pomodori end
+  - [x] break end
+
+> [Sound](http://appjar.info/pythonSound/) is only supported in Windows, using the Winsound API. Therefore, only .WAV files will work.
+
+Well, that fucking blows.
+
+- [x] Implement `.bell()`, ~~`.soundError()`~~, and ~~`soundWarning()`~~ for [if not on Windows](https://stackoverflow.com/questions/1325581/how-do-i-check-if-im-running-on-windows-in-python). The latter two don't work on non-Windows, and even on Windows they don't "work."
 
 One issue right now is that once I start the timer, if I press "close" on that
 window, it doesn't close the application (i.e. terminal hangs).
