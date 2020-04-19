@@ -25,3 +25,5 @@ class GlobalTimer (object):
         m = self.remaining / 60 % 60
         s = self.remaining % 60
         return int(h), int(m), int(s)
+    def remaining_seconds(self):
+        return self.remaining

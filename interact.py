@@ -8,9 +8,6 @@ class PomodoroTimer(object):
     def __init__(self, session):
         self.onbreak = False
         self.session = session
-        print(self.session.get_pomodoro())
-        print(self.session.get_breaktime())
-        print(self.session.get_longbreak())
         # seconds
         self.remaining = self.session.get_pomodoro()
     # TODO: logic about whether break or not, and how that affects self.remaining
@@ -35,12 +32,21 @@ class PomodoroTimer(object):
         return self.onbreak
     def one_second_remaining(self):
         return self.remaining == 1
+    def percentage(self):
+        if self.onbreak == True:
+            if self.session.get_number_pomo() % self.session.dividend == 0:
+                return int(self.remaining / float(self.session.get_longbreak()) * 100)
+            else:
+                return int(self.remaining / float(self.session.get_breaktime()) * 100)
+        else:
+            return int(self.remaining / float(self.session.get_pomodoro()) * 100)
 
 class InteractivePomodoro(object):
     # usage: interface = InteractivePomodoro(hours, mins, pomodoro_length)
     def __init__(self, hours, mins, pomodoro_length):
         self.session = Pomodoro() # what does this allow me to do?
         seconds = (hours * 3600) + (mins * 60)
+        self.seconds = seconds
         self.globaltimer = GlobalTimer()
         self.globaltimer.set_timer(seconds)
         totalTime = (hours * 60) + mins
@@ -79,3 +85,5 @@ class InteractivePomodoro(object):
         return self.pomodoro_timer.break_status()
     def one_second_remaining(self):
         return self.pomodoro_timer.one_second_remaining()
+    def percentages(self):
+        return 100 - self.pomodoro_timer.percentage(), 100 - int(self.globaltimer.remaining_seconds() / float(self.seconds) * 100)

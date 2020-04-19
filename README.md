@@ -1,5 +1,12 @@
 # 2020 Update
 
+
+**UPDATE (4/19/2020)**: I've finished the main functionality of the GUI app. There are several issues and bugs I plan to fix,
+but since I mainly need to study material for job interviews (algorithms and such), I'll postpone the fixing and cross-platform release
+to another weekend. For now, I have a working application that is better than my previous iteration.
+
+*BIG caveat*: Sounds only work on Windows. Sucks.
+
 [The old README can be found here](#pomodoro-python-script).
 
 I've been trying to create a good, cross-platform GUI for this, as can be seen
@@ -19,7 +26,10 @@ people, whether they are technologically literate or not.
 
 ### Latest / Current TODO(s)
 
-- [ ] Add a progress bar ([meter](http://appjar.info/outputWidgets/#meter)) that is properly calculated.
+[PyInstaller](https://www.pyinstaller.org/) (bundling the appJar Python GUI program as a Windows executable) doesn't work yet because of some stuff I need to add (such as [favicon.ico](https://stackoverflow.com/questions/18537918/why-isnt-ico-file-defined-when-setting-windows-icon)).
+
+- [ ] Fix the above-described bug when bundling Python script as a Windows executable.
+- [ ] Release cross-platform applcation bundle.
 
 ### History
 
@@ -277,21 +287,21 @@ I also want to see if [Toolbars, Menubars, and Statusbars](http://appjar.info/py
 would be applicable for my app--that is, I want to be able to see at all times
 what the status of my Pomodoro is.
 
-- [ ] Check out and see if applicable: [Toolbars, Menubars, and Statusbars](http://appjar.info/pythonBars/)
+- [x] Check out and see if applicable: [Toolbars, Menubars, and Statusbars](http://appjar.info/pythonBars/) *The most applicable one would be statusbar, but I already have a DualMeter for that.*
 
 I want to have a progress bar that displays actual overall progress (unlike
 my jank setup that doesn't work in the script).
 
-- [ ] Add a progress bar ([meter](http://appjar.info/outputWidgets/#meter)) that is properly calculated.
+- [x] Add a progress bar ([meter](http://appjar.info/outputWidgets/#meter)) that is properly calculated.
 
 Moreover, for this progress bar, I want it to be able to show a color depending on what I'm doing.
 For example, red for breaktime, green for worktime.
 
-- [ ] Find out if you can change the color of the progress bar (given that you can update it continuously over time, like the Label).
+- [x] Find out if you can change the color of the progress bar (given that you can update it continuously over time, like the Label). `app.setMeterFill("progress", "blue")`
 
 I want a grip that allows me to move this thing around wherever I want.
 
-- [ ] Add a [grip output widget](http://appjar.info/outputWidgets/#grip).
+- [x] Add a [grip output widget](http://appjar.info/outputWidgets/#grip).
 
 According to [this answer](https://stackoverflow.com/questions/2933/how-can-i-create-a-directly-executable-cross-platform-gui-app-using-python),
 there are other Python GUI libraries that might be better suited for this.
@@ -300,9 +310,11 @@ to use [PyInstaller](https://www.pyinstaller.org/) on top of this appJar busines
 
 - [x] Try using [PyInstaller](https://www.pyinstaller.org/) to bundle the appJar Python GUI program as a Windows executable.
 
-This doesn't work yet because of some stuff I need to add (such as [favicon.ico](https://stackoverflow.com/questions/18537918/why-isnt-ico-file-defined-when-setting-windows-icon)).
+[PyInstaller](https://www.pyinstaller.org/) (bundling the appJar Python GUI program as a Windows executable) doesn't work yet because of some stuff I need to add (such as [favicon.ico](https://stackoverflow.com/questions/18537918/why-isnt-ico-file-defined-when-setting-windows-icon)).
 
 - [ ] Fix the above-described bug when bundling Python script as a Windows executable.
+
+- [ ] Release cross-platform applcation bundle.
 
 ### Competing Pomodoro apps
 

@@ -21,14 +21,17 @@ def main():
             app.hideSubWindow("main")
             app.startSubWindow("Pomodoro", modal = False)
             global_time = "%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
+            app.addDualMeter("progress")
+            l = [0, 0]
+            app.setMeter("progress", l)
             app.addLabel("global_time", global_time)
             app.setLabelBg("global_time", "red")
             app.addGrip(0,1)
             app.showSubWindow("Pomodoro")
             app.stopSubWindow()
             def decrement_timer():
+                app.clearLabel("global_time")
                 if pomodoro.done():
-                    app.clearLabel("global_time")
                     app.setLabel("global_time", "DONE!!!")
                     app.showSubWindow("Pomodoro")
                     if os.name == 'nt':
@@ -37,7 +40,6 @@ def main():
                         app.bell()
                     app.stop()
                 else:
-                    app.clearLabel("global_time")
                     pomodoro.decrement_time_remaining()
                     global_time = "%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
                     color = "red"
@@ -53,6 +55,9 @@ def main():
                             else:
                                 app.bell()
                     app.setLabel("global_time", global_time)
+                    pomo_percentage, global_percentage = pomodoro.percentages()
+                    l = [pomo_percentage, global_percentage]
+                    app.setMeter("progress", l)
                     if pomodoro.break_status():
                         color = "green"
                     else:
