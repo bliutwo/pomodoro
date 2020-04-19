@@ -7,12 +7,26 @@ from global_timer import *
 class PomodoroTimer(object):
     def __init__(self, session):
         self.onbreak = False
-        self.remaining = session.get_pomodoro()
+        self.session = session
+        print(self.session.get_pomodoro())
+        print(self.session.get_breaktime())
+        print(self.session.get_longbreak())
+        # seconds
+        self.remaining = self.session.get_pomodoro()
     # TODO: logic about whether break or not, and how that affects self.remaining
     def decrement(self):
         self.remaining = self.remaining - 1
         if self.remaining == 0:
-            self.remaining == session.get_pomodoro()
+            if self.onbreak == False:
+                self.onbreak = True
+                self.session.add()
+                if self.session.get_number_pomo() % self.session.dividend == 0:
+                    self.remaining = self.session.get_longbreak()
+                else:
+                    self.remaining = self.session.get_breaktime()
+            else:
+                self.onbreak = False
+                self.remaining = self.session.get_pomodoro()
     def remainder(self):
         m = self.remaining / 60 % 60
         s = self.remaining % 60
@@ -53,7 +67,7 @@ class InteractivePomodoro(object):
             pm = '0' + pm
         if len(ps) == 1:
             ps = '0' + ps
-        return pm, ps, gh, gm, gs, onbreak
+        return onbreak, gh, gm, gs, pm, ps
     def decrement_time_remaining(self):
         self.globaltimer.decrement()
         self.pomodoro_timer.decrement()

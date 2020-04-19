@@ -19,7 +19,6 @@ people, whether they are technologically literate or not.
 
 ### Latest / Current TODO(s)
 
-- [ ] Implement logic for breaks and longbreaks in `interact.py`.
 - [ ] Display background corresponding to what the session is (pomodoro, break). Maybe red for pomodoro, green for break?
 
 ### Pomodoro Interactive Wrapper
@@ -32,6 +31,10 @@ the Pomodoro, globaltimer, etc. classes.
 According to the other scripts I've written, `custom_pomodoro.py` and `timedpomodoro.py`,
 I'm actually creating a timer on top of the existing `Pomodoro()` class. I'll probably
 need to do the same thing in `interact.py`.
+
+I need to implement logic for breaks and longbreaks in `interact.py`.
+
+- [x] Implement logic for breaks and longbreaks in `interact.py`.
 
 #### History
 
@@ -103,10 +106,6 @@ So I'm able to update the Label continuously over time, but two new problems hav
 Actually, the unstoppable timer issue isn't as important. What I really need to do now is to display the Pomodoro timer on top of the global timer, as well as a background corresponding to what the session is (pomodoro, break).
 
 - [x] Display the Pomodoro timer ~~on top of~~ next to the global timer.
-
-I need to implement logic for breaks and longbreaks in `interact.py`.
-
-- [ ] Implement logic for breaks and longbreaks in `interact.py`.
 
 - [ ] Display background corresponding to what the session is (pomodoro, break). Maybe red for pomodoro, green for break?
 
