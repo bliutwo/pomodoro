@@ -20,18 +20,7 @@ people, whether they are technologically literate or not.
 ### Latest / Current TODO(s)
 
 - [ ] Write a Python class file that directly interacts with my Pomodoro.
-- [ ] Try to update a Label continuously over time.
-
-
-
-
-
-
-
-
-
-
-
+- [x] Try to update a Label continuously over time.
 
 ### Pomodoro Interactive Wrapper
 
@@ -86,22 +75,22 @@ Let's try to output the global timer first.
 
 Next, we need to decrement the timer label over time.
 
-- [ ] Decrement timer label over time.
+- [x] Decrement timer label over time.
 
 The problem is that I can change it, but it doesn't show up until the end of the session.
 
 I finally found from [this StackOverflow answer](https://stackoverflow.com/questions/47821806/creating-loops-to-update-a-label-in-app-jar)
 that I need to think about appJar's [Loops and Sleeps](http://appjar.info/pythonLoopsAndSleeps/).
 
-- [ ] Check out appJar's [Loops and Sleeps](http://appjar.info/pythonLoopsAndSleeps/).
+- [x] Check out appJar's [Loops and Sleeps](http://appjar.info/pythonLoopsAndSleeps/).
 
+So I'm able to update the Label continuously over time, but two new problems have arisen:
 
+- The updates don't actually correspond to one second.
+- It's impossible to stop the timer (even with red X or ctrl+C on the keyboard in the terminal) unless I stop the "Python" task in task manager.
 
-
-
-
-
-
+- [ ] Get the updates to correspond to one second.
+- [ ] Fix the unstoppable timer issue mentioned above.
 
 ### History
 
