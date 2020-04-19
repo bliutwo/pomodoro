@@ -82,7 +82,11 @@ Importantly, it doesn't keep track of how much time is left in a single pomodoro
 
 Let's try to output the global timer first.
 
-- [ ] Output global timer values and display it on the GUI.
+- [x] Output global timer values and display it on the GUI.
+
+Next, we need to decrement the timer label over time.
+
+- [ ] Decrement timer label over time.
 
 
 
