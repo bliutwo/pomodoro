@@ -17,7 +17,7 @@ def main():
             minutes = app.getEntry("Minutes to work:")
             pomodoro = app.getEntry("Length of pomodoro:")
             print("hours:", hours, "minutes:", minutes, "pomodoro", pomodoro)
-            app.destroySubWindow("main")
+            app.hideSubWindow("main")
             app.showSubWindow("timer")
 
     # create a GUI variable called app
