@@ -19,7 +19,7 @@ def main():
             pomodoro = interact.InteractivePomodoro(hours, minutes, custom_pomo)
             app.hideSubWindow("main")
             app.startSubWindow("Pomodoro", modal = False)
-            global_time = "%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
+            global_time = "%s\n%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
             app.addLabel("global_time", global_time)
             app.addGrip(0,1)
             app.showSubWindow("Pomodoro")
@@ -27,7 +27,7 @@ def main():
             def decrement_timer():
                 app.clearLabel("global_time")
                 pomodoro.decrement_time_remaining()
-                global_time = "%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
+                global_time = "%s\n%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
                 app.setLabel("global_time", global_time)
                 app.showSubWindow("Pomodoro")
             app.setPollTime(10)

@@ -67,7 +67,7 @@ class InteractivePomodoro(object):
             pm = '0' + pm
         if len(ps) == 1:
             ps = '0' + ps
-        return onbreak, gh, gm, gs, pm, ps
+        return self.session.get_number_pomo(), onbreak, gh, gm, gs, pm, ps
     def decrement_time_remaining(self):
         self.globaltimer.decrement()
         self.pomodoro_timer.decrement()

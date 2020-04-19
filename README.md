@@ -19,94 +19,7 @@ people, whether they are technologically literate or not.
 
 ### Latest / Current TODO(s)
 
-- [ ] Display background corresponding to what the session is (pomodoro, break). Maybe red for pomodoro, green for break?
-
-### Pomodoro Interactive Wrapper
-
-In this section, I'll cover how I implement the interface between the GUI and
-the Pomodoro, globaltimer, etc. classes.
-
-#### The Actual Pomodoro Timer
-
-According to the other scripts I've written, `custom_pomodoro.py` and `timedpomodoro.py`,
-I'm actually creating a timer on top of the existing `Pomodoro()` class. I'll probably
-need to do the same thing in `interact.py`.
-
-I need to implement logic for breaks and longbreaks in `interact.py`.
-
-- [x] Implement logic for breaks and longbreaks in `interact.py`.
-
-#### History
-
-It looks like integrating my existing Python classes won't be as simple as I
-initially thought. I have a bunch of classes that don't directly allow me to
-display and return a "timer," per se. I'll need to write a class file that
-does exactly what I just described.
-
-- [x] Write a Python class file that directly interacts with my Pomodoro.
-  - Ideally, all it does is allow me to do the following things:
-    - Input initial time required.
-    - Output time remaining (for current pomodoro / break and global).
-    - Allow me to decrement the time remaining (for each second that passes).
-
-There are two aspects to this:
-
-- "session" timer
-- "global" timer
-
-In the first one, we need to find out if we are on a break or Pomodoro work session.
-In the second, we need to find out the total time remaining.
-
-The second one seems to be taken care of mostly by `global_timer.py`.
-
-The first one seems like it might be tricky, but we implemented what that would look like in `custom_pomodoro.py`.
-Let's see how it's implemented there.
-
-So according to `custom_pomodoro.py`, we'll want to make a `session = Pomodoro()` and `session.set_goal()` and `session.set_pomo()`.
-(The `session.set_pomo()` may be optional, but we'll see if we need it when we define each one.)
-At the same time, we'll want to make a `globaltimer = GlobalTimer()` and then `globaltimer.set_timer(seconds)`.
-
-- `session.set_goal()`: "set the goal in minutes, takes customGoal in minutes." ~~This is specifically to do with the "number of Pomodoro" remaining, but we can cover more details later~~ This might mean that we can set how long we want our session to be? It seems not exactly right, so I'll do more research later.
-- `session.set_pomo()`: "set the length of a pomodoro in minutes, takes customPomo in minutes." This means that we can give it the number of minutes we want each Pomodoro to be.
-- `session.get_pomodoro()`: "returns pomodoro amount in seconds." Is this used to return whether we're on a break or long break? Yes. ~~If `session.get_pomodoro() % 4 == 0`, then we get a long break. Else, it's a regular break.~~ But not in that way.
-
-We also want to check `timedpomodoro.py` because that has the `execute_pomodoro` function, which takes in a `session = Pomodoro()` and a `globaltimer = GlobalTimer()` as parameters.
-
-An important distinction is that `Pomodoro()` itself only keeps track of a few things
-
-- Pomodori so far
-- Whether we're on break
-- ~~How much time remains in a single pomodoro~~
-
-Importantly, it doesn't keep track of how much time is left in a single pomodoro.
-
-Let's try to output the global timer first.
-
-- [x] Output global timer values and display it on the GUI.
-
-Next, we need to decrement the timer label over time.
-
-- [x] Decrement timer label over time.
-
-The problem is that I can change it, but it doesn't show up until the end of the session.
-
-I finally found from [this StackOverflow answer](https://stackoverflow.com/questions/47821806/creating-loops-to-update-a-label-in-app-jar)
-that I need to think about appJar's [Loops and Sleeps](http://appjar.info/pythonLoopsAndSleeps/).
-
-- [x] Check out appJar's [Loops and Sleeps](http://appjar.info/pythonLoopsAndSleeps/).
-
-So I'm able to update the Label continuously over time, but two new problems have arisen:
-
-- The updates don't actually correspond to one second.
-- It's impossible to stop the timer (even with red X or ctrl+C on the keyboard in the terminal) unless I stop the "Python" task in task manager.
-
-- [x] Get the updates to correspond to one second. (`app.setPollTime(1000)`)
-- [x] Fix the unstoppable timer issue mentioned above. *Apparently fixing the above TODO also fixed this TODO. Ctrl + C works now.*
-
-Actually, the unstoppable timer issue isn't as important. What I really need to do now is to display the Pomodoro timer on top of the global timer, as well as a background corresponding to what the session is (pomodoro, break).
-
-- [x] Display the Pomodoro timer ~~on top of~~ next to the global timer.
-
+- [ ] Play sounds to start breaks, pomodori, and when the global timer ends.
 - [ ] Display background corresponding to what the session is (pomodoro, break). Maybe red for pomodoro, green for break?
 
 ### History
@@ -122,8 +35,8 @@ Now that I've got appJar installed, I should try creating a basic GUI app.
 
 - [x] Create a basic GUI app.
 - [x] Mold this basic GUI app into what I need for Pomodoro.
-- [ ] Find out how to control the logic of the buttons
-- [ ] Find out how to have changing display over time
+- [x] Find out how to control the logic of the buttons
+- [x] Find out how to have changing display over time
 
 Seems like I want to have basic input and output, so I'm going to check out
 [input widgets](http://appjar.info/inputWidgets/) followed by
@@ -238,7 +151,99 @@ Maybe I can delete all widgets in the current window, and then display one?
 Let's see if I can update a Label continuously over time (and subsequently,
 the meter).
 
-- [ ] Try to update a Label continuously over time.
+- [x] Try to update a Label continuously over time.
+
+#### Pomodoro Interactive Wrapper
+
+In this section, I'll cover how I implement the interface between the GUI and
+the Pomodoro, globaltimer, etc. classes.
+
+##### The Actual Pomodoro Timer
+
+According to the other scripts I've written, `custom_pomodoro.py` and `timedpomodoro.py`,
+I'm actually creating a timer on top of the existing `Pomodoro()` class. I'll probably
+need to do the same thing in `interact.py`.
+
+I need to implement logic for breaks and longbreaks in `interact.py`.
+
+- [x] Implement logic for breaks and longbreaks in `interact.py`.
+
+It looks like integrating my existing Python classes won't be as simple as I
+initially thought. I have a bunch of classes that don't directly allow me to
+display and return a "timer," per se. I'll need to write a class file that
+does exactly what I just described.
+
+- [x] Write a Python class file that directly interacts with my Pomodoro.
+  - Ideally, all it does is allow me to do the following things:
+    - Input initial time required.
+    - Output time remaining (for current pomodoro / break and global).
+    - Allow me to decrement the time remaining (for each second that passes).
+
+There are two aspects to this:
+
+- "session" timer
+- "global" timer
+
+In the first one, we need to find out if we are on a break or Pomodoro work session.
+In the second, we need to find out the total time remaining.
+
+The second one seems to be taken care of mostly by `global_timer.py`.
+
+The first one seems like it might be tricky, but we implemented what that would look like in `custom_pomodoro.py`.
+Let's see how it's implemented there.
+
+So according to `custom_pomodoro.py`, we'll want to make a `session = Pomodoro()` and `session.set_goal()` and `session.set_pomo()`.
+(The `session.set_pomo()` may be optional, but we'll see if we need it when we define each one.)
+At the same time, we'll want to make a `globaltimer = GlobalTimer()` and then `globaltimer.set_timer(seconds)`.
+
+- `session.set_goal()`: "set the goal in minutes, takes customGoal in minutes." ~~This is specifically to do with the "number of Pomodoro" remaining, but we can cover more details later~~ This might mean that we can set how long we want our session to be? It seems not exactly right, so I'll do more research later.
+- `session.set_pomo()`: "set the length of a pomodoro in minutes, takes customPomo in minutes." This means that we can give it the number of minutes we want each Pomodoro to be.
+- `session.get_pomodoro()`: "returns pomodoro amount in seconds." Is this used to return whether we're on a break or long break? Yes. ~~If `session.get_pomodoro() % 4 == 0`, then we get a long break. Else, it's a regular break.~~ But not in that way.
+
+We also want to check `timedpomodoro.py` because that has the `execute_pomodoro` function, which takes in a `session = Pomodoro()` and a `globaltimer = GlobalTimer()` as parameters.
+
+An important distinction is that `Pomodoro()` itself only keeps track of a few things
+
+- Pomodori so far
+- Whether we're on break
+- ~~How much time remains in a single pomodoro~~
+
+Importantly, it doesn't keep track of how much time is left in a single pomodoro.
+
+Let's try to output the global timer first.
+
+- [x] Output global timer values and display it on the GUI.
+
+Next, we need to decrement the timer label over time.
+
+- [x] Decrement timer label over time.
+
+The problem is that I can change it, but it doesn't show up until the end of the session.
+
+I finally found from [this StackOverflow answer](https://stackoverflow.com/questions/47821806/creating-loops-to-update-a-label-in-app-jar)
+that I need to think about appJar's [Loops and Sleeps](http://appjar.info/pythonLoopsAndSleeps/).
+
+- [x] Check out appJar's [Loops and Sleeps](http://appjar.info/pythonLoopsAndSleeps/).
+
+So I'm able to update the Label continuously over time, but two new problems have arisen:
+
+- The updates don't actually correspond to one second.
+- It's impossible to stop the timer (even with red X or ctrl+C on the keyboard in the terminal) unless I stop the "Python" task in task manager.
+
+- [x] Get the updates to correspond to one second. (`app.setPollTime(1000)`)
+- [x] Fix the unstoppable timer issue mentioned above. *Apparently fixing the above TODO also fixed this TODO. Ctrl + C works now.*
+
+Actually, the unstoppable timer issue isn't as important. What I really need to do now is to display the Pomodoro timer on top of the global timer, as well as a background corresponding to what the session is (pomodoro, break).
+
+- [x] Display the Pomodoro timer ~~on top of~~ ~~next to the~~ on top of the global timer.
+
+- [ ] Display background corresponding to what the session is (pomodoro, break). Maybe red for pomodoro, green for break?
+
+#### History (continued)
+
+So I've implemented the main logic of `interact.py`. Now I need to play sounds to start breaks, pomodori, and when the global timer ends.
+
+- [ ] Play sounds to start breaks, pomodori, and when the global timer ends.
 
 One issue right now is that once I start the timer, if I press "close" on that
 window, it doesn't close the application (i.e. terminal hangs).
