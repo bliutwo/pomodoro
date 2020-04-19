@@ -1,14 +1,10 @@
 import sys
 sys.dont_write_bytecode = True
-# from Pomodoro import *
-# from timedpomodoro import *
-# from global_timer import *
 import interact
 import time
 
 # import the (appJar) library
 from appJar import gui
-
 
 def main():
     # handle button events
@@ -22,7 +18,6 @@ def main():
             print("hours:", hours, "minutes:", minutes, "custom_pomo", custom_pomo)
             pomodoro = interact.InteractivePomodoro(hours, minutes, custom_pomo)
             app.hideSubWindow("main")
-            # execute_pomodoro(session, globaltimer)
             app.startSubWindow("timer", modal = False)
             global_time = "%s:%s:%s" % pomodoro.output_remaining_time_strings()
             app.addLabel("global_time", global_time)
@@ -41,11 +36,7 @@ def main():
     # create a GUI variable called app
     app = gui()
 
-    # specify name and size for GUI
-    # app = gui("Pomodoro Timer", "400x200")
-
     # change general appearance of GUI
-    # app.setBg("orange")
     app.startSubWindow("main", "Welcome to Pomodoro Timer")
     app.setFont(18)
 
