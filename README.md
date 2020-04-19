@@ -88,6 +88,13 @@ Next, we need to decrement the timer label over time.
 
 - [ ] Decrement timer label over time.
 
+The problem is that I can change it, but it doesn't show up until the end of the session.
+
+I finally found from [this StackOverflow answer](https://stackoverflow.com/questions/47821806/creating-loops-to-update-a-label-in-app-jar)
+that I need to think about appJar's [Loops and Sleeps](http://appjar.info/pythonLoopsAndSleeps/).
+
+- [ ] Check out appJar's [Loops and Sleeps](http://appjar.info/pythonLoopsAndSleeps/).
+
 
 
 

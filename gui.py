@@ -4,6 +4,7 @@ sys.dont_write_bytecode = True
 # from timedpomodoro import *
 # from global_timer import *
 import interact
+import time
 
 # import the (appJar) library
 from appJar import gui
@@ -25,8 +26,16 @@ def main():
             global_time = "%s:%s:%s" % pomodoro.output_remaining_time_strings()
             app.addLabel("global_time", global_time)
             app.addGrip(0,1)
-            app.stopSubWindow()
             app.showSubWindow("timer")
+            app.stopSubWindow()
+            for i in range(3):
+                time.sleep(1)
+                app.clearLabel("global_time")
+                pomodoro.decrement_time_remaining()
+                global_time = "%s:%s:%s" % pomodoro.output_remaining_time_strings()
+                app.setLabel("global_time", global_time)
+                app.showSubWindow("timer")
+                # app.showSubWindow("timer")
 
     # create a GUI variable called app
     app = gui()
