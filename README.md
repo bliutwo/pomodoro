@@ -24,7 +24,7 @@ So I'm able to update the Label continuously over time, but two new problems hav
 - The updates don't actually correspond to one second.
 - It's impossible to stop the timer (even with red X in the GUI window, or ctrl+C on the keyboard in the terminal) unless I stop the "Python" task in task manager.
 
-- [ ] Get the updates to correspond to one second.
+- [x] Get the updates to correspond to one second. (`app.setPollTime(1000)`)
 - [ ] Fix the unstoppable timer issue mentioned above.
 
 ### Pomodoro Interactive Wrapper

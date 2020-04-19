@@ -30,6 +30,7 @@ def main():
                 global_time = "%s:%s:%s" % pomodoro.output_remaining_time_strings()
                 app.setLabel("global_time", global_time)
                 app.showSubWindow("timer")
+            app.setPollTime(1000)
             app.registerEvent(decrement_timer)
 
 
