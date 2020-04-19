@@ -27,6 +27,14 @@ people, whether they are technologically literate or not.
 In this section, I'll cover how I implement the interface between the GUI and
 the Pomodoro, globaltimer, etc. classes.
 
+#### The Actual Pomodoro Timer
+
+According to the other scripts I've written, `custom_pomodoro.py` and `timedpomodoro.py`,
+I'm actually creating a timer on top of the existing `Pomodoro()` class. I'll probably
+need to do the same thing in `interact.py`.
+
+#### History
+
 It looks like integrating my existing Python classes won't be as simple as I
 initially thought. I have a bunch of classes that don't directly allow me to
 display and return a "timer," per se. I'll need to write a class file that
@@ -90,7 +98,7 @@ So I'm able to update the Label continuously over time, but two new problems hav
 - It's impossible to stop the timer (even with red X or ctrl+C on the keyboard in the terminal) unless I stop the "Python" task in task manager.
 
 - [x] Get the updates to correspond to one second. (`app.setPollTime(1000)`)
-- [ ] Fix the unstoppable timer issue mentioned above.
+- [x] Fix the unstoppable timer issue mentioned above. *Apparently fixing the above TODO also fixed this TODO. Ctrl + C works now.*
 
 Actually, the unstoppable timer issue isn't as important. What I really need to do now is to display the Pomodoro timer on top of the global timer, as well as a background corresponding to what the session is (pomodoro, break).
 

@@ -4,6 +4,22 @@ sys.dont_write_bytecode = True
 from Pomodoro import *
 from global_timer import *
 
+class PomodoroTimer(object):
+    def __init__(self, session):
+        self.onbreak = False
+        self.remaining = session.get_pomodoro()
+    # TODO: logic about whether break or not, and how that affects self.remaining
+    def decrement(self):
+        self.remaining = self.remaining - 1
+        if self.remaining == 0:
+            self.remaining == session.get_pomodoro()
+    def remainder(self):
+        m = self.remaining / 60 % 60
+        s = self.remaining % 60
+        return int(m), int(s)
+    def break_status(self):
+        return self.onbreak
+
 class InteractivePomodoro(object):
     # usage: interface = InteractivePomodoro(hours, mins, pomodoro_length)
     def __init__(self, hours, mins, pomodoro_length):
@@ -17,18 +33,27 @@ class InteractivePomodoro(object):
             totalTime = pomodoroInMinutes
         self.session.set_goal(totalTime)
         self.session.set_pomo(pomodoro_length)
-        self.onbreak = False
+        self.pomodoro_timer = PomodoroTimer(self.session)
     def output_remaining_time_strings(self):
         gh, gm, gs = self.globaltimer.remainder()
+        pm, ps = self.pomodoro_timer.remainder()
+        onbreak = self.pomodoro_timer.break_status()
         gh = str(gh)
         gm = str(gm)
         gs = str(gs)
+        pm = str(pm)
+        ps = str(ps)
         if len(gh) == 1:
             gh = '0' + gh
         if len(gm) == 1:
             gm = '0' + gm
         if len(gs) == 1:
             gs = '0' + gs
-        return gh, gm, gs
+        if len(pm) == 1:
+            pm = '0' + pm
+        if len(ps) == 1:
+            ps = '0' + ps
+        return pm, ps, gh, gm, gs, onbreak
     def decrement_time_remaining(self):
         self.globaltimer.decrement()
+        self.pomodoro_timer.decrement()
