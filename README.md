@@ -1,5 +1,7 @@
 # 2020 Update
 
+## Latest update
+
 **UPDATE (4/19/2020)**: I've finished the main functionality of the GUI app. There are several issues and bugs I plan to fix,
 but since I mainly need to study material for job interviews (algorithms and such), I'll postpone the fixing and cross-platform release
 to another weekend. For now, I have a working application that is better than my previous iteration.
@@ -7,6 +9,8 @@ to another weekend. For now, I have a working application that is better than my
 *BIG caveat*: Sounds only work on Windows. Sucks.
 
 I use [DeskPins](https://efotinis.neocities.org/deskpins/) to keep the window pinned on top.
+
+## Old update
 
 [The old README can be found here](#pomodoro-python-script).
 
