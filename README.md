@@ -1,5 +1,9 @@
 # 2020 Update
 
+## Latest update (4/20/2020, 00:43)
+
+This doesn't quite work on Mac. The window keeps going to the front, but more importantly, steals focus from other apps.
+
 ## Latest update (4/19/2020, 17:08)
 
 I've finished the main functionality of the GUI app. There are several issues and bugs I plan to fix,
