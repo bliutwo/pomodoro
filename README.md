@@ -1,8 +1,8 @@
 # 2020 Update
 
-## Latest update
+## Latest update (4/19/2020, 17:08)
 
-**UPDATE (4/19/2020)**: I've finished the main functionality of the GUI app. There are several issues and bugs I plan to fix,
+I've finished the main functionality of the GUI app. There are several issues and bugs I plan to fix,
 but since I mainly need to study material for job interviews (algorithms and such), I'll postpone the fixing and cross-platform release
 to another weekend. For now, I have a working application that is better than my previous iteration.
 
