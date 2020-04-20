@@ -72,6 +72,9 @@ def main():
     # create a GUI variable called app
     app = gui()
 
+    # keep GUI on top (UPDATE: doesn't work properly)
+    # app.setOnTop(stay=True)
+
     # change general appearance of GUI
     app.startSubWindow("main", "Welcome to Pomodoro Timer")
     app.setFont(18)

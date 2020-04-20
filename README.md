@@ -1,11 +1,12 @@
 # 2020 Update
 
-
 **UPDATE (4/19/2020)**: I've finished the main functionality of the GUI app. There are several issues and bugs I plan to fix,
 but since I mainly need to study material for job interviews (algorithms and such), I'll postpone the fixing and cross-platform release
 to another weekend. For now, I have a working application that is better than my previous iteration.
 
 *BIG caveat*: Sounds only work on Windows. Sucks.
+
+I use [DeskPins](https://efotinis.neocities.org/deskpins/) to keep the window pinned on top.
 
 [The old README can be found here](#pomodoro-python-script).
 
@@ -304,7 +305,12 @@ I want a grip that allows me to move this thing around wherever I want.
 - [x] Add a [grip output widget](http://appjar.info/outputWidgets/#grip).
 
 According to [this answer](https://stackoverflow.com/questions/2933/how-can-i-create-a-directly-executable-cross-platform-gui-app-using-python),
-there are other Python GUI libraries that might be better suited for this.
+there are other Python GUI libraries that might be better suited for this, but it honestly this works. Maybe someday.
+
+- [ ] Research [other Python GUI libraries that might be better suited for this](https://stackoverflow.com/questions/2933/how-can-i-create-a-directly-executable-cross-platform-gui-app-using-python).
+
+- [x] Keep timer on top using [`.setOnTop(stay=True)`](http://appjar.info/pythonGuiOptions/). *Problem: it doesn't work properly. It'll only stay on top per update, and if I want to stay focused on a different application, it won't stay on top.*
+
 For the purpose of exporting the program as an executable binary, I might want
 to use [PyInstaller](https://www.pyinstaller.org/) on top of this appJar business.
 
