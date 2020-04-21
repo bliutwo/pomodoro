@@ -33,7 +33,6 @@ def main():
                 app.clearLabel("global_time")
                 if pomodoro.done():
                     app.setLabel("global_time", "DONE!!!")
-                    # app.showSubWindow("Pomodoro")
                     if os.name == 'nt':
                         app.playSound("./abadis.wav", wait=True)
                     else:
@@ -63,7 +62,6 @@ def main():
                     else:
                         color = "red"
                     app.setLabelBg("global_time", color)
-                    # app.showSubWindow("Pomodoro")
             # takes time in milliseconds
             app.setPollTime(1000)
             app.registerEvent(decrement_timer)

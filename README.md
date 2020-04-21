@@ -253,7 +253,7 @@ So I'm able to update the Label continuously over time, but two new problems hav
 - It's impossible to stop the timer (even with red X or ctrl+C on the keyboard in the terminal) unless I stop the "Python" task in task manager.
 
 - [x] Get the updates to correspond to one second. (`app.setPollTime(1000)`)
-- [x] Fix the unstoppable timer issue mentioned above. *Apparently fixing the above TODO also fixed this TODO. Ctrl + C works now.*
+- [x] Fix the unstoppable timer issue mentioned above. *~~Apparently fixing the above TODO also fixed this TODO. Ctrl + C works now~~.* **The actual fix was taking out the unnecessary `showSubWindow`s**.
 
 Actually, the unstoppable timer issue isn't as important. What I really need to do now is to display the Pomodoro timer on top of the global timer, as well as a background corresponding to what the session is (pomodoro, break).
 
