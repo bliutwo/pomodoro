@@ -33,9 +33,11 @@ people, whether they are technologically literate or not.
 
 ### Latest / Current TODO(s)
 
+- [ ] Use [BitBar](https://github.com/matryer/bitbar#plugin-api) (already installed) to display the script on top bar on Mac.
+
 There's a bug in that the window constantly takes focus. We might be able to fix that by doing the following:
 
-- [ ] See if you can't eliminate extra `app.showSubWindow("Pomodoro")` lines. This should only be needed *once*.
+- [x] See if you can't eliminate extra `app.showSubWindow("Pomodoro")` lines. This should only be needed *once*.
 
 [PyInstaller](https://www.pyinstaller.org/) (bundling the appJar Python GUI program as a Windows executable) doesn't work yet because of some stuff I need to add (such as [favicon.ico](https://stackoverflow.com/questions/18537918/why-isnt-ico-file-defined-when-setting-windows-icon)).
 

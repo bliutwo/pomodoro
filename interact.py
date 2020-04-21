@@ -85,5 +85,6 @@ class InteractivePomodoro(object):
         return self.pomodoro_timer.break_status()
     def one_second_remaining(self):
         return self.pomodoro_timer.one_second_remaining()
+    # returns what percentage we're through with the timers, pomodoro and global
     def percentages(self):
         return 100 - self.pomodoro_timer.percentage(), 100 - int(self.globaltimer.remaining_seconds() / float(self.seconds) * 100)
