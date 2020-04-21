@@ -1,12 +1,10 @@
-# 2020 Update
+# 2020 Updates
 
-## Latest update (4/20/2020, 00:43)
+(4/20/2020, 20:53) There may be hope yet for that problem below! Check [latest TODO](#latest--current-todos).
 
-This doesn't quite work on Mac. The window keeps going to the front, but more importantly, steals focus from other apps.
+(4/20/2020, 00:43) This doesn't quite work on Mac. The window keeps going to the front, but more importantly, steals focus from other apps.
 
-## Latest update (4/19/2020, 17:08)
-
-I've finished the main functionality of the GUI app. There are several issues and bugs I plan to fix,
+(4/19/2020, 17:08) I've finished the main functionality of the GUI app. There are several issues and bugs I plan to fix,
 but since I mainly need to study material for job interviews (algorithms and such), I'll postpone the fixing and cross-platform release
 to another weekend. For now, I have a working application that is better than my previous iteration.
 
@@ -14,7 +12,7 @@ to another weekend. For now, I have a working application that is better than my
 
 I use [DeskPins](https://efotinis.neocities.org/deskpins/) to keep the window pinned on top.
 
-## Old update
+## Old 2020 update
 
 [The old README can be found here](#pomodoro-python-script).
 
@@ -34,6 +32,10 @@ people, whether they are technologically literate or not.
 ## TODO
 
 ### Latest / Current TODO(s)
+
+There's a bug in that the window constantly takes focus. We might be able to fix that by doing the following:
+
+- [ ] See if you can't eliminate extra `app.showSubWindow("Pomodoro")` lines. This should only be needed *once*.
 
 [PyInstaller](https://www.pyinstaller.org/) (bundling the appJar Python GUI program as a Windows executable) doesn't work yet because of some stuff I need to add (such as [favicon.ico](https://stackoverflow.com/questions/18537918/why-isnt-ico-file-defined-when-setting-windows-icon)).
 
