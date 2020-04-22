@@ -37,7 +37,6 @@ people, whether they are technologically literate or not.
 
 That is, high priority items appear first.
 
-- [x] Add a break at the beginning of the session in order to "ease" into the work session.
 - [ ] Add an *option* for the break like "Do you want to have a small 'break' to start, in order to 'ease' into the work session? (y/N)" using [`RadioButton`s](http://appjar.info/inputWidgets/#radiobutton).
   - [ ] Do this also for `topbar.py`.
 
@@ -66,7 +65,11 @@ there are other Python GUI libraries that might be better suited for this, but i
 
 - [ ] Research [other Python GUI libraries that might be better suited for this](https://stackoverflow.com/questions/2933/how-can-i-create-a-directly-executable-cross-platform-gui-app-using-python).
 
-### History / Finished TODOs in chronological order
+### History / Finished TODOs in Reverse Chronological Order
+
+- [x] Add a break at the beginning of the session in order to "ease" into the work session.
+
+#### True Chronological order starts here
 
 - [x] Figure out how to import appJar onto my PC.
   - [x] Run the following command:
