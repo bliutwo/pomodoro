@@ -38,7 +38,8 @@ people, whether they are technologically literate or not.
 That is, high priority items appear first.
 
 - [x] Add a break at the beginning of the session in order to "ease" into the work session.
-- [ ] Add an *option* for the break like "Do you want to have a small 'break' to start, in order to 'ease' into the work session? (y/N)" using
+- [ ] Add an *option* for the break like "Do you want to have a small 'break' to start, in order to 'ease' into the work session? (y/N)" using [`RadioButton`s](http://appjar.info/inputWidgets/#radiobutton).
+  - [ ] Do this also for `topbar.py`.
 
 - [ ] Write instructions for using this app.
 
