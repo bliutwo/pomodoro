@@ -65,11 +65,19 @@ there are other Python GUI libraries that might be better suited for this, but i
 
 - [ ] Research [other Python GUI libraries that might be better suited for this](https://stackoverflow.com/questions/2933/how-can-i-create-a-directly-executable-cross-platform-gui-app-using-python).
 
-### History / Finished TODOs in Reverse Chronological Order
+### History / Finished TODOs
+
+The two sections below are mutually exclusive.
+
+#### Reverse Chronological Order
+
+Started doing this 4/22/20, 14:53.
 
 - [x] Add a break at the beginning of the session in order to "ease" into the work session.
 
-#### True Chronological order starts here
+#### True Chronological Order
+
+The beginning of 2020 completed TODOs starts here.
 
 - [x] Figure out how to import appJar onto my PC.
   - [x] Run the following command:
