@@ -6,6 +6,11 @@ import time
 import pygame_sound
 import threading
 
+def write_status(filename, status):
+    f = open(filename, "w")
+    f.write(status)
+    f.close()
+
 def play_sound(filename):
     pygame_sound.playSound(filename)
 
@@ -13,6 +18,7 @@ def main():
     start_work_sound = "./exclamation.mp3"
     start_break_sound = "./harp.mp3"
     finished_sound = "./abadis.mp3"
+    status_filename = "status.txt"
     hours = 3
     mins = 16
     length = 20
@@ -21,7 +27,7 @@ def main():
     while not pomodoro.done():
         p_percent, g_percent = pomodoro.percentages()
         num_pomo, gh, gm, gs, pm, ps = pomodoro.output_remaining_time_strings()
-        status = str(g_percent) + "% " + pm + ":" + ps + " " + str(num_pomo)
+        status = str(num_pomo) + "  " + str(g_percent) + "% " + str(p_percent) + "% " + pm + ":" + ps
         if pomodoro.break_status() == True:
             status = "BREAK! " + status
         if pomodoro.one_second_remaining():
@@ -33,10 +39,10 @@ def main():
                 t = threading.Thread(target=play_sound, args=(start_break_sound,))
                 threads.append(t)
                 t.start()
-        print(status) 
+        write_status(status_filename, status)
         pomodoro.decrement()
         time.sleep(1)
-    print("DONE!")
+    write_status(status_filename, status)
     play_sound(finished_sound)
 
 if __name__ == "__main__":

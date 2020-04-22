@@ -1,5 +1,7 @@
 # 2020 Updates
 
+(4/21/2020, 20:43) It works! Top bar application works, but I need to write instructions and installation.
+
 (4/20/2020, 20:53) There may be hope yet for that problem below! Check [latest TODO](#latest--current-todos).
 
 (4/20/2020, 00:43) This doesn't quite work on Mac. The window keeps going to the front, but more importantly, steals focus from other apps.
@@ -33,21 +35,22 @@ people, whether they are technologically literate or not.
 
 ### Latest / Current TODO(s)
 
-It displays at the top, but the main problem is that it expects a one-line output. All I need to do is update a file over time, and it'll work.
-
-- [ ] Make a Python script that updates a file over time, then make another that *only* reads and prints the line from the file.
-
-- [x] Use [BitBar](https://github.com/matryer/bitbar#plugin-api) (already installed) to display the script on top bar on Mac.
+- [ ] Write instructions for this.
 
 [PyInstaller](https://www.pyinstaller.org/) (bundling the appJar Python GUI program as a Windows executable) doesn't work yet because of some stuff I need to add (such as [favicon.ico](https://stackoverflow.com/questions/18537918/why-isnt-ico-file-defined-when-setting-windows-icon)).
 
 - [ ] Fix the above-described bug when bundling Python script as a Windows executable.
 - [ ] Release cross-platform applcation bundle.
 
-### topbar.py
+### BitBar stint
 
 - [x] In `topbar.py`, play sounds.
 - [x] Add multithreading action!
+- [x] Use [BitBar](https://github.com/matryer/bitbar#plugin-api) (already installed) to display the script on top bar on Mac.
+
+It displays at the top, but the main problem is that it expects a one-line output. All I need to do is update a file over time, and it'll work.
+
+- [x] Make a Python script that updates a file over time, then make another that *only* reads and prints the line from the file.
 
 ### History
 
