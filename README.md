@@ -33,26 +33,39 @@ people, whether they are technologically literate or not.
 
 ## TODO
 
-### Latest / Current TODO(s)
+### Latest / Current / Unfinished TODO(s) in order of decreasing priority
 
-- [ ] Write instructions for this.
+That is, high priority items appear first.
+
+- [ ] Add a break at the beginning of the session in order to "ease" into the work session.
+- [ ] Add an *option* for the break like "Do you want to have a small 'break' to start, in order to 'ease' into the work session? (y/N)" using
+
+- [ ] Write instructions for using this app.
 
 [PyInstaller](https://www.pyinstaller.org/) (bundling the appJar Python GUI program as a Windows executable) doesn't work yet because of some stuff I need to add (such as [favicon.ico](https://stackoverflow.com/questions/18537918/why-isnt-ico-file-defined-when-setting-windows-icon)).
 
 - [ ] Fix the above-described bug when bundling Python script as a Windows executable.
 - [ ] Release cross-platform applcation bundle.
 
-### BitBar stint
+- [ ] Implement "if close timer window, close entire application."
 
-- [x] In `topbar.py`, play sounds.
-- [x] Add multithreading action!
-- [x] Use [BitBar](https://github.com/matryer/bitbar#plugin-api) (already installed) to display the script on top bar on Mac.
+There's another nuance: pressing "cancel" closes the application (currently), but
+the terminal hang occurs *even on the main window.* How do I grab the event of "pressing the X to close" button?
 
-It displays at the top, but the main problem is that it expects a one-line output. All I need to do is update a file over time, and it'll work.
+- [ ] Grab the event of "pressing the X to close" button.
 
-- [x] Make a Python script that updates a file over time, then make another that *only* reads and prints the line from the file.
+- [ ] Consider [widget layout](http://appjar.info/pythonWidgetLayout/).
 
-### History
+Also, ideally, I'd be able to resize the app to take up minimal space.
+
+- [ ] See if can resize the app via code.
+
+According to [this answer](https://stackoverflow.com/questions/2933/how-can-i-create-a-directly-executable-cross-platform-gui-app-using-python),
+there are other Python GUI libraries that might be better suited for this, but it honestly this works. Maybe someday.
+
+- [ ] Research [other Python GUI libraries that might be better suited for this](https://stackoverflow.com/questions/2933/how-can-i-create-a-directly-executable-cross-platform-gui-app-using-python).
+
+### History / Finished TODOs in chronological order
 
 - [x] Figure out how to import appJar onto my PC.
   - [x] Run the following command:
@@ -287,16 +300,6 @@ Well, that fucking blows.
 One issue right now is that once I start the timer, if I press "close" on that
 window, it doesn't close the application (i.e. terminal hangs).
 
-- [ ] Implement "if close timer window, close entire application."
-
-There's another nuance: pressing "cancel" closes the application (currently), but
-the terminal hang occurs *even on the main window.* How do I grab the event of "pressing the X to close" button?
-
-- [ ] Grab the event of "pressing the X to close" button.
-
-Also, ideally, I'd be able to resize the app to take up minimal space.
-
-- [ ] See if can resize the app via code.
 - [x] See if can resize the app via normal user window resizing. **Probably via [Paned Frames](http://appjar.info/pythonWidgetGrouping/#paned-frame)**.
 
 I'll eventually also need sound for my alarms so I'll check out
@@ -324,11 +327,6 @@ I want a grip that allows me to move this thing around wherever I want.
 
 - [x] Add a [grip output widget](http://appjar.info/outputWidgets/#grip).
 
-According to [this answer](https://stackoverflow.com/questions/2933/how-can-i-create-a-directly-executable-cross-platform-gui-app-using-python),
-there are other Python GUI libraries that might be better suited for this, but it honestly this works. Maybe someday.
-
-- [ ] Research [other Python GUI libraries that might be better suited for this](https://stackoverflow.com/questions/2933/how-can-i-create-a-directly-executable-cross-platform-gui-app-using-python).
-
 - [x] Keep timer on top using [`.setOnTop(stay=True)`](http://appjar.info/pythonGuiOptions/). *Problem: it doesn't work properly. It'll only stay on top per update, and if I want to stay focused on a different application, it won't stay on top.*
 
 For the purpose of exporting the program as an executable binary, I might want
@@ -339,6 +337,16 @@ to use [PyInstaller](https://www.pyinstaller.org/) on top of this appJar busines
 There's a bug in that the window constantly takes focus. We might be able to fix that by doing the following:
 
 - [x] See if you can't eliminate extra `app.showSubWindow("Pomodoro")` lines. This should only be needed *once*.
+
+#### BitBar stint
+
+- [x] In `topbar.py`, play sounds.
+- [x] Add multithreading action!
+- [x] Use [BitBar](https://github.com/matryer/bitbar#plugin-api) (already installed) to display the script on top bar on Mac.
+
+It displays at the top, but the main problem is that it expects a one-line output. All I need to do is update a file over time, and it'll work.
+
+- [x] Make a Python script that updates a file over time, then make another that *only* reads and prints the line from the file.
 
 ### Competing Pomodoro apps
 

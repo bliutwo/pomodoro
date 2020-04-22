@@ -19,9 +19,15 @@ def main():
     start_break_sound = "./harp.mp3"
     finished_sound = "./abadis.mp3"
     status_filename = "status.txt"
-    hours = 3
-    mins = 16
-    length = 20
+    
+    hourString = input("How many hours can you work this session? ")
+    minutesString = input("How many minutes in addition to that? ")
+    pomodoroString = input("How long do you want each Pomodoro to be (in minutes)? ")
+
+    hours = int(hourString)
+    mins = int(minutesString)
+    length = int(pomodoroString)
+
     pomodoro = interact.InteractivePomodoro(hours, mins, length)
     threads = []
     while not pomodoro.done():
