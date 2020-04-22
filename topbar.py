@@ -42,6 +42,7 @@ def main():
         write_status(status_filename, status)
         pomodoro.decrement()
         time.sleep(1)
+    status = "DONE!" + str(num_pomo) + "  " + str(g_percent) + "% " + str(p_percent) + "% " + pm + ":" + ps
     write_status(status_filename, status)
     play_sound(finished_sound)
 
