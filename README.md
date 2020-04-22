@@ -33,6 +33,8 @@ people, whether they are technologically literate or not.
 
 ### Latest / Current TODO(s)
 
+- [ ] In `topbar.py`, play sounds.
+
 - [ ] Use [BitBar](https://github.com/matryer/bitbar#plugin-api) (already installed) to display the script on top bar on Mac.
 
 There's a bug in that the window constantly takes focus. We might be able to fix that by doing the following:

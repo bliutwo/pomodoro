@@ -39,7 +39,7 @@ def main():
                         app.bell()
                     app.stop()
                 else:
-                    pomodoro.decrement_time_remaining()
+                    pomodoro.decrement()
                     global_time = "%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
                     color = "red"
                     if pomodoro.one_second_remaining():
