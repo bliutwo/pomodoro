@@ -63,7 +63,7 @@ def main():
                         color = "red"
                     app.setLabelBg("global_time", color)
             # takes time in milliseconds
-            app.setPollTime(1000)
+            app.setPollTime(10)
             app.registerEvent(decrement_timer)
 
 

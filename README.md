@@ -37,7 +37,7 @@ people, whether they are technologically literate or not.
 
 That is, high priority items appear first.
 
-- [ ] Add a break at the beginning of the session in order to "ease" into the work session.
+- [x] Add a break at the beginning of the session in order to "ease" into the work session.
 - [ ] Add an *option* for the break like "Do you want to have a small 'break' to start, in order to 'ease' into the work session? (y/N)" using
 
 - [ ] Write instructions for using this app.

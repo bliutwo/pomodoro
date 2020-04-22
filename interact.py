@@ -5,11 +5,15 @@ from Pomodoro import *
 from global_timer import *
 
 class PomodoroTimer(object):
-    def __init__(self, session):
+    def __init__(self, session, start_with_break):
         self.onbreak = False
+        if start_with_break == True:
+            self.onbreak = True
         self.session = session
         # seconds
         self.remaining = self.session.get_pomodoro()
+        if start_with_break == True:
+            self.remaining = self.session.get_breaktime()
     def decrement(self):
         self.remaining = self.remaining - 1
         if self.remaining == 0:
@@ -42,19 +46,16 @@ class PomodoroTimer(object):
 
 class InteractivePomodoro(object):
     # usage: interface = InteractivePomodoro(hours, mins, pomodoro_length)
-    def __init__(self, hours, mins, pomodoro_length):
+    def __init__(self, hours, mins, pomodoro_length, start_with_break=True):
         self.session = Pomodoro() # what does this allow me to do?
+        self.session.set_pomo(pomodoro_length)
+        self.pomodoro_timer = PomodoroTimer(self.session, start_with_break)
         seconds = (hours * 3600) + (mins * 60)
+        if start_with_break == True:
+            seconds += self.session.get_breaktime()
         self.seconds = seconds
         self.globaltimer = GlobalTimer()
         self.globaltimer.set_timer(seconds)
-        totalTime = (hours * 60) + mins
-        pomodoroInMinutes = self.session.get_pomodoro() / 60
-        if (totalTime < pomodoroInMinutes):
-            totalTime = pomodoroInMinutes
-        self.session.set_goal(totalTime)
-        self.session.set_pomo(pomodoro_length)
-        self.pomodoro_timer = PomodoroTimer(self.session)
     def output_remaining_time_strings(self):
         gh, gm, gs = self.globaltimer.remainder()
         pm, ps = self.pomodoro_timer.remainder()
