@@ -19,7 +19,7 @@ def main():
     start_break_sound = "./harp.mp3"
     finished_sound = "./abadis.mp3"
     status_filename = "status.txt"
-    
+
     hourString = input("How many hours can you work this session? ")
     minutesString = input("How many minutes in addition to that? ")
     pomodoroString = input("How long do you want each Pomodoro to be (in minutes)? ")
@@ -36,6 +36,8 @@ def main():
         status = str(num_pomo) + "  " + str(g_percent) + "% " + str(p_percent) + "% " + pm + ":" + ps
         if pomodoro.break_status() == True:
             status = "BREAK! " + status
+        else:
+            status = "WORK! " + status
         if pomodoro.one_second_remaining():
             if pomodoro.break_status() == True:
                 t = threading.Thread(target=play_sound, args=(start_work_sound,))
