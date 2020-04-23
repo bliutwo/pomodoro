@@ -32,7 +32,9 @@ def main():
             def decrement_timer():
                 app.clearLabel("global_time")
                 if pomodoro.done():
-                    app.setLabel("global_time", "DONE!!!")
+                    global_time = "%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
+                    print(global_time)
+                    app.setLabel("global_time", global_time)
                     if os.name == 'nt':
                         app.playSound("./abadis.wav", wait=True)
                     else:
@@ -63,7 +65,7 @@ def main():
                         color = "red"
                     app.setLabelBg("global_time", color)
             # takes time in milliseconds
-            app.setPollTime(1000)
+            app.setPollTime(10)
             app.registerEvent(decrement_timer)
 
 

@@ -56,6 +56,7 @@ class InteractivePomodoro(object):
         self.seconds = seconds
         self.globaltimer = GlobalTimer()
         self.globaltimer.set_timer(seconds)
+        self.ending_pomo = 0
     def output_remaining_time_strings(self):
         gh, gm, gs = self.globaltimer.remainder()
         pm, ps = self.pomodoro_timer.remainder()
@@ -75,12 +76,18 @@ class InteractivePomodoro(object):
             pm = '0' + pm
         if len(ps) == 1:
             ps = '0' + ps
-        return self.session.get_number_pomo(), gh, gm, gs, pm, ps
+        num_pomo = self.session.get_number_pomo()
+        if self.ending_pomo != 0:
+            num_pomo = self.ending_pomo
+        return str(num_pomo), gh, gm, gs, pm, ps
     def decrement(self):
         self.globaltimer.decrement()
         self.pomodoro_timer.decrement()
     def done(self):
-        return self.globaltimer.done()
+        if self.globaltimer.done():
+            percent = (100 - self.pomodoro_timer.percentage()) / 100.0
+            self.ending_pomo = self.session.get_number_pomo() + percent
+            return self.globaltimer.done()
     def break_status(self):
         return self.pomodoro_timer.break_status()
     def one_second_remaining(self):
@@ -88,3 +95,5 @@ class InteractivePomodoro(object):
     # returns what percentage we're through with the timers, pomodoro and global
     def percentages(self):
         return 100 - self.pomodoro_timer.percentage(), 100 - int(self.globaltimer.remaining_seconds() / float(self.seconds) * 100)
+    def get_num_pomo(self):
+        return self.session.get_number_pomo()

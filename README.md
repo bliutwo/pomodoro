@@ -6,6 +6,7 @@
 
 That is, high priority items appear first.
 
+- [ ] Why does the output of partial pomodoro (ending_pomodoro) not show up in the GUI?
 - [ ] Use Overcooked sounds as default. More details later.
 
 - [ ] Add an *option* for the break like "Do you want to have a small 'break' to start, in order to 'ease' into the work session? (y/N)" using [`RadioButton`s](http://appjar.info/inputWidgets/#radiobutton).
