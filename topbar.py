@@ -29,6 +29,7 @@ def main():
     length = int(pomodoroString)
 
     pomodoro = interact.InteractivePomodoro(hours, mins, length)
+    play_sound(start_work_sound)
     threads = []
     while not pomodoro.done():
         p_percent, g_percent = pomodoro.percentages()
