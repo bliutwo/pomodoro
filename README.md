@@ -1,35 +1,4 @@
-# 2020 Updates
-
-(4/21/2020, 20:43) It works! Top bar application works, but I need to write instructions and installation.
-
-(4/20/2020, 20:53) There may be hope yet for that problem below! Check [latest TODO](#latest--current-todos).
-
-(4/20/2020, 00:43) This doesn't quite work on Mac. The window keeps going to the front, but more importantly, steals focus from other apps.
-
-(4/19/2020, 17:08) I've finished the main functionality of the GUI app. There are several issues and bugs I plan to fix,
-but since I mainly need to study material for job interviews (algorithms and such), I'll postpone the fixing and cross-platform release
-to another weekend. For now, I have a working application that is better than my previous iteration.
-
-*BIG caveat*: Sounds only work on Windows. Sucks.
-
-I use [DeskPins](https://efotinis.neocities.org/deskpins/) to keep the window pinned on top.
-
-## Old 2020 update
-
-[The old README can be found here](#pomodoro-python-script).
-
-I've been trying to create a good, cross-platform GUI for this, as can be seen
-[here](https://github.com/bliutwo/pomodoro_django) and my research into
-[QtCreator](https://doc.qt.io/qtcreator/index.html), and also the [original README](#pomodoro-python-script)
-in which I talked about making a good GUI way back in 2015 or so. I figured that Python must
-have its own GUI-app type framework, so I found, from the [Python Wiki](https://wiki.python.org/moin/GuiProgramming),
-[appJar](http://appjar.info/), which is something like Tkinter (something that
-Andy, my old, flakey project partner put into the project specifications of a
-[project that I ended up doing on my own](https://github.com/bliutwo/disease-ontology)).
-
-So I'll be making an app using appJar to make this a reality. Hopefully, it will
-be a "double click this to run it" app that is easy to use for all kinds of
-people, whether they are technologically literate or not.
+# Pomodoro Looping Timer
 
 ## TODO
 
@@ -367,6 +336,39 @@ It displays at the top, but the main problem is that it expects a one-line outpu
 - [PowerPom - Pomodoro Timer](https://www.microsoft.com/en-us/p/powerpom-pomodoro-timer/9p5zscl5qc8w?activetab=pivot:overviewtab): In this one, I don't see an option to make it a tiny part of the screen. Moreover, it has ads. Yuck.
 - [Focus Booster App](https://www.focusboosterapp.com/download): 30-day trial. Also yuck.
 - [Top 10 Free and Open Source Pomodoro Apps](https://medevel.com/top-10-free-and-open-source-pomodoro-apps-for-windows-macos-and-linux/): The problem is that these don't do *exactly* what I want it to do, and the windows themselves (in the case of having any of them always-on-top) seem too big.
+
+# 2020 Updates
+
+(4/21/2020, 20:43) It works! Top bar application works, but I need to write instructions and installation.
+
+(4/20/2020, 20:53) There may be hope yet for that problem below! Check [latest TODO](#latest--current-todos).
+
+(4/20/2020, 00:43) This doesn't quite work on Mac. The window keeps going to the front, but more importantly, steals focus from other apps.
+
+(4/19/2020, 17:08) I've finished the main functionality of the GUI app. There are several issues and bugs I plan to fix,
+but since I mainly need to study material for job interviews (algorithms and such), I'll postpone the fixing and cross-platform release
+to another weekend. For now, I have a working application that is better than my previous iteration.
+
+*BIG caveat*: Sounds only work on Windows. Sucks.
+
+I use [DeskPins](https://efotinis.neocities.org/deskpins/) to keep the window pinned on top.
+
+## Old 2020 update
+
+[The old README can be found here](#pomodoro-python-script).
+
+I've been trying to create a good, cross-platform GUI for this, as can be seen
+[here](https://github.com/bliutwo/pomodoro_django) and my research into
+[QtCreator](https://doc.qt.io/qtcreator/index.html), and also the [original README](#pomodoro-python-script)
+in which I talked about making a good GUI way back in 2015 or so. I figured that Python must
+have its own GUI-app type framework, so I found, from the [Python Wiki](https://wiki.python.org/moin/GuiProgramming),
+[appJar](http://appjar.info/), which is something like Tkinter (something that
+Andy, my old, flakey project partner put into the project specifications of a
+[project that I ended up doing on my own](https://github.com/bliutwo/disease-ontology)).
+
+So I'll be making an app using appJar to make this a reality. Hopefully, it will
+be a "double click this to run it" app that is easy to use for all kinds of
+people, whether they are technologically literate or not.
 
 # Pomodoro Python script
 
