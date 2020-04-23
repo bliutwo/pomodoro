@@ -6,8 +6,8 @@
 
 That is, high priority items appear first.
 
-- [ ] Why does the output of partial pomodoro (ending_pomodoro) not show up in the GUI?
 - [ ] Use Overcooked sounds as default. More details later.
+- [ ] Why does the output of partial pomodoro (ending_pomodoro) not show up in the GUI?
 
 - [ ] Add an *option* for the break like "Do you want to have a small 'break' to start, in order to 'ease' into the work session? (y/N)" using [`RadioButton`s](http://appjar.info/inputWidgets/#radiobutton).
   - [ ] Do this also for `topbar.py`.
@@ -45,6 +45,7 @@ The two sections below are mutually exclusive.
 
 Started doing this 4/22/20, 14:53.
 
+- [x] Fix bug where the "pre-break" pomodoro (short break) displayed a percentage relative to a long break.
 - [x] Add a break at the beginning of the session in order to "ease" into the work session.
 
 #### True Chronological Order

@@ -37,7 +37,7 @@ class PomodoroTimer(object):
         return self.remaining == 1
     def percentage(self):
         if self.onbreak == True:
-            if self.session.get_number_pomo() % self.session.dividend == 0:
+            if self.session.get_number_pomo() % self.session.dividend == 0 and self.session.get_number_pomo() != 0:
                 return int(self.remaining / float(self.session.get_longbreak()) * 100)
             else:
                 return int(self.remaining / float(self.session.get_breaktime()) * 100)
