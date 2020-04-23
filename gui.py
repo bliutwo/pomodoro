@@ -23,7 +23,9 @@ def main():
             global_time = "%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
             app.addDualMeter("progress")
             l = [0, 0]
+            colors = ["red", "blue"]
             app.setMeter("progress", l)
+            app.setMeterFill("progress", colors)
             app.addLabel("global_time", global_time)
             app.setLabelBg("global_time", "red")
             app.addGrip(0,1)
@@ -65,7 +67,7 @@ def main():
                         color = "red"
                     app.setLabelBg("global_time", color)
             # takes time in milliseconds
-            app.setPollTime(1000)
+            app.setPollTime(10)
             app.registerEvent(decrement_timer)
 
 
