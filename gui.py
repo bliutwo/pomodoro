@@ -38,7 +38,7 @@ def main():
                     print(global_time)
                     app.setLabel("global_time", global_time)
                     if os.name == 'nt':
-                        app.playSound("./abadis.wav", wait=True)
+                        app.playSound("./sounds/abadis.wav", wait=True)
                     else:
                         app.bell()
                     app.stop()
@@ -49,12 +49,12 @@ def main():
                     if pomodoro.one_second_remaining():
                         if pomodoro.break_status():
                             if os.name == 'nt':
-                                app.playSound("./exclamation.wav")
+                                app.playSound("./sounds/exclamation.wav")
                             else:
                                 app.bell()
                         else:
                             if os.name == 'nt':
-                                app.playSound("./harp.wav")
+                                app.playSound("./sounds/harp.wav")
                             else:
                                 app.bell()
                     app.setLabel("global_time", global_time)
@@ -67,7 +67,7 @@ def main():
                         color = "red"
                     app.setLabelBg("global_time", color)
             # takes time in milliseconds
-            app.setPollTime(1000)
+            app.setPollTime(10)
             app.registerEvent(decrement_timer)
 
 

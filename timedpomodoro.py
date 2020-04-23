@@ -41,7 +41,7 @@ def execute_pomodoro(session, globaltimer):
             if globaltimer.done():
                 globaltimer.status()
                 break
-        playSound("./harp.mp3")
+        playSound("./sounds/harp.mp3")
         #print "\a"
         session.add()
         if session.done():
@@ -55,15 +55,15 @@ def execute_pomodoro(session, globaltimer):
             if globaltimer.done():
                 globaltimer.status()
                 break
-        playSound("./exclamation.mp3")
+        playSound("./sounds/exclamation.mp3")
         #print "\a"
         session.printProgress()
 
-    playSound("./exclamation.mp3")
+    playSound("./sounds/exclamation.mp3")
     #print "\a"
     print("\nExiting.")
     print("DONE! ctrl + c to exit")
-    playSound("./abadis.mp3")
+    playSound("./sounds/abadis.mp3")
 
 def main():
     # 27 minutes and 30 seconds = 1650 seconds

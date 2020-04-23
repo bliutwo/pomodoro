@@ -15,9 +15,9 @@ def play_sound(filename):
     pygame_sound.playSound(filename)
 
 def main():
-    start_work_sound = "./exclamation.mp3"
-    start_break_sound = "./harp.mp3"
-    finished_sound = "./abadis.mp3"
+    start_work_sound = "./sounds/start3.mp3"
+    start_break_sound = "./sounds/overcooked2_map_theme.mp3"
+    finished_sound = "./sounds/7am_animal_crossing.mp3"
     status_filename = "status.txt"
 
     hourString = input("How many hours can you work this session? ")
