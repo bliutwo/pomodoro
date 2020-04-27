@@ -14,7 +14,7 @@ That is, high priority items appear first.
 
 - [ ] Write instructions for using this app.
 
-Maybe what I need is a control panel for the app. It should include stop, start, pause, reset, etc. Basically look at [Tomato Timers](https://www.tomatotimers.com/) for guidance.
+Maybe what I need is a control panel for the app. It should include stop, start, pause, reset, etc. Basically look at [Tomato Timers](https://www.tomatotimers.com/) for guidance. I came up with this idea after thinking about the best way my mom would be able to use it.
 
 - [ ] Make a control panel for the app.
 
