@@ -16,7 +16,7 @@ def play_sound(filename):
 
 def main():
     start_work_sound = "./sounds/start3.mp3"
-    start_break_sound = "./sounds/overcooked2_map_theme.mp3"
+    start_break_sound = "./sounds/harp.mp3"
     finished_sound = "./sounds/7am_animal_crossing.mp3"
     status_filename = "status.txt"
 
@@ -36,9 +36,9 @@ def main():
         num_pomo, gh, gm, gs, pm, ps = pomodoro.output_remaining_time_strings()
         status = str(num_pomo) + "  " + str(g_percent) + "% " + str(p_percent) + "% " + pm + ":" + ps
         if pomodoro.break_status() == True:
-            status = "BREAK! " + status
+            status = "BREAK!  " + status
         else:
-            status = "WORK! " + status
+            status = "WORK!  " + status
         if pomodoro.one_second_remaining():
             if pomodoro.break_status() == True:
                 t = threading.Thread(target=play_sound, args=(start_work_sound,))
@@ -51,7 +51,7 @@ def main():
         write_status(status_filename, status)
         pomodoro.decrement()
         time.sleep(1)
-    status = "DONE!" + str(num_pomo) + "  " + str(g_percent) + "% " + str(p_percent) + "% " + pm + ":" + ps
+    status = "DONE!  " + str(num_pomo) + "  " + str(g_percent) + "% " + str(p_percent) + "% " + pm + ":" + ps
     write_status(status_filename, status)
     play_sound(finished_sound)
 

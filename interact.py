@@ -46,7 +46,7 @@ class PomodoroTimer(object):
 
 class InteractivePomodoro(object):
     # usage: interface = InteractivePomodoro(hours, mins, pomodoro_length)
-    def __init__(self, hours, mins, pomodoro_length, start_with_break=True):
+    def __init__(self, hours, mins, pomodoro_length, start_with_break=False):
         self.session = Pomodoro() # what does this allow me to do?
         self.session.set_pomo(pomodoro_length)
         self.pomodoro_timer = PomodoroTimer(self.session, start_with_break)

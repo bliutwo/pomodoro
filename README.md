@@ -14,6 +14,10 @@ That is, high priority items appear first.
 
 - [ ] Write instructions for using this app.
 
+Maybe what I need is a control panel for the app. It should include stop, start, pause, reset, etc. Basically look at [Tomato Timers](https://www.tomatotimers.com/) for guidance.
+
+- [ ] Make a control panel for the app.
+
 [PyInstaller](https://www.pyinstaller.org/) (bundling the appJar Python GUI program as a Windows executable) doesn't work yet because of some stuff I need to add (such as [favicon.ico](https://stackoverflow.com/questions/18537918/why-isnt-ico-file-defined-when-setting-windows-icon)).
 
 - [ ] Fix the above-described bug when bundling Python script as a Windows executable.
