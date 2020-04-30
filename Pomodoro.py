@@ -44,6 +44,12 @@ class Pomodoro (object):
         self.pomodoro  = customPomo
         self.breaktime = customPomo / 5.0
         self.longbreak = self.breaktime * 3
+    # set a custom short break
+    def set_shortbreak(self, shortbreak):
+        self.breaktime = shortbreak
+    # set a custom long break
+    def set_longbreak(self, longbreak):
+        self.longbreak = longbreak
     # returns remainingPomo, takes customGoal in minutes
     def set_remaining_pomo(self, customGoal):
         divisor = ((self.pomodoro + self.breaktime) * self.dividend) - self.breaktime
@@ -62,7 +68,7 @@ class Pomodoro (object):
     def get_number_pomo(self):
         return self.count
 
-def main():  
+def main():
     session = Pomodoro()
     session.printProgress()
     userInput = raw_input("Press [RETURN] to increase count by 1 (0 to exit): ")

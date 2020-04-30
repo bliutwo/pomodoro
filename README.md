@@ -6,8 +6,9 @@
 
 That is, high priority items appear first.
 
-- [ ] **Allow custom settings, i.e., allow them to change the length of pomodoro, break, and longbreak.**
-  - [ ] **Just ask them at the beginning.**
+- [x] **Allow custom settings, i.e., allow them to change the length of pomodoro, break, and longbreak.**
+  - [x] **Just ask them at the beginning.**
+    - [ ] Test to see if this works.
   - [ ] Eventually, take in a file that has those three settings.
 
 - [ ] Use Overcooked sounds as default. More details later.

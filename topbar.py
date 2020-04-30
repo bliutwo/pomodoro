@@ -16,19 +16,39 @@ def play_sound(filename):
 
 def main():
     start_work_sound = "./sounds/start3.mp3"
-    start_break_sound = "./sounds/harp.mp3"
+    start_break_sound = "./sounds/overcooked2_map_theme.mp3"
     finished_sound = "./sounds/7am_animal_crossing.mp3"
     status_filename = "status.txt"
 
     hourString = input("How many hours can you work this session? ")
     minutesString = input("How many minutes in addition to that? ")
     pomodoroString = input("How long do you want each Pomodoro to be (in minutes)? ")
+    customBreaks = input("Do you want to set custom breaktimes [y/n]? ")
+
+    options = ["y", "yes", "n", "no"]
+
+    while customBreaks not in options:
+        customBreaks = input("Please input 'y', 'yes', 'n', or 'no'. Do you want to set custom breaktimes? [y/n] ")
+
+    break_bool = -1
+    shortBreakString = ""
+    longBreakString = ""
+    if customBreaks == "y" or customBreaks == "yes":
+        break_bool = 1
+        shortBreakString = input("How long do you want your SHORT breaks to be (in minutes)? ")
+        longBreakString = input("How long do you want your LONG breaks to be (in minutes)? ")
+    else:
+        break_bool = 0
 
     hours = int(hourString)
     mins = int(minutesString)
     length = int(pomodoroString)
 
     pomodoro = interact.InteractivePomodoro(hours, mins, length)
+
+    if break_bool == 1:
+        pomodoro.set_custom_breaktimes(shortbreak=int(shortBreakString), longbreak=int(longBreakString))
+
     play_sound(start_work_sound)
     threads = []
     while not pomodoro.done():

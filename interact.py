@@ -12,7 +12,13 @@ class PomodoroTimer(object):
         self.session = session
         # seconds
         self.remaining = self.session.get_pomodoro()
+        self.start_with_break = start_with_break
         if start_with_break == True:
+            self.remaining = self.session.get_breaktime()
+    def set_custom_breaktimes(self, shortbreak, longbreak):
+        self.session.set_shortbreak(shortbreak)
+        self.session.set_longbreak(longbreak)
+        if self.start_with_break == True:
             self.remaining = self.session.get_breaktime()
     def decrement(self):
         self.remaining = self.remaining - 1
@@ -57,6 +63,8 @@ class InteractivePomodoro(object):
         self.globaltimer = GlobalTimer()
         self.globaltimer.set_timer(seconds)
         self.ending_pomo = 0
+    def set_custom_breaktimes(self, shortbreak, longbreak):
+        self.pomodoro_timer.set_custom_breaktimes(shortbreak, longbreak)
     def output_remaining_time_strings(self):
         gh, gm, gs = self.globaltimer.remainder()
         pm, ps = self.pomodoro_timer.remainder()
