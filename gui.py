@@ -20,6 +20,10 @@ def main():
             pomodoro = interact.InteractivePomodoro(hours, minutes, custom_pomo)
             app.hideSubWindow("main")
             app.startSubWindow("Pomodoro", modal = False)
+            if os.name == 'nt':
+                app.playSound("./sounds/start3.wav")
+            else:
+                app.bell()
             global_time = "%s\n%s:%s:%s\n%s:%s" % pomodoro.output_remaining_time_strings()
             app.addDualMeter("progress")
             l = [0, 0]
@@ -49,7 +53,7 @@ def main():
                     if pomodoro.one_second_remaining():
                         if pomodoro.break_status():
                             if os.name == 'nt':
-                                app.playSound("./sounds/exclamation.wav")
+                                app.playSound("./sounds/start3.wav")
                             else:
                                 app.bell()
                         else:

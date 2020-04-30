@@ -6,6 +6,10 @@
 
 That is, high priority items appear first.
 
+- [ ] Allow custom settings, i.e., allow them to change the length of pomodoro, break, and longbreak.
+  - [ ] Just ask them at the beginning.
+  - [ ] Eventually, take in a file that has those three settings.
+
 - [ ] Use Overcooked sounds as default. More details later.
 - [ ] Why does the output of partial pomodoro (ending_pomodoro) not show up in the GUI?
 
