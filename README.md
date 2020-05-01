@@ -1,63 +1,17 @@
 # Pomodoro Looping Timer
 
-## TODO
-
-### Latest / Current / Unfinished TODO(s) in order of decreasing priority
-
-That is, high priority items appear first.
-
-- [x] **Allow custom settings, i.e., allow them to change the length of pomodoro, break, and longbreak.**
-  - [x] **Just ask them at the beginning.**
-    - [ ] Test to see if this works.
-  - [ ] Eventually, take in a file that has those three settings.
-
-- [ ] Use Overcooked sounds as default. More details later.
-- [ ] Why does the output of partial pomodoro (ending_pomodoro) not show up in the GUI?
-
-- [ ] Add an *option* for the break like "Do you want to have a small 'break' to start, in order to 'ease' into the work session? (y/N)" using [`RadioButton`s](http://appjar.info/inputWidgets/#radiobutton).
-  - [ ] Do this also for `topbar.py`.
-
-- [ ] Write instructions for using this app.
-
-Maybe what I need is a control panel for the app. It should include stop, start, pause, reset, etc. Basically look at [Tomato Timers](https://www.tomatotimers.com/) for guidance. I came up with this idea after thinking about the best way my mom would be able to use it.
-
-- [ ] Make a control panel for the app.
-
-[PyInstaller](https://www.pyinstaller.org/) (bundling the appJar Python GUI program as a Windows executable) doesn't work yet because of some stuff I need to add (such as [favicon.ico](https://stackoverflow.com/questions/18537918/why-isnt-ico-file-defined-when-setting-windows-icon)).
-
-- [ ] Fix the above-described bug when bundling Python script as a Windows executable.
-- [ ] Release cross-platform applcation bundle.
-
-- [ ] Implement "if close timer window, close entire application."
-
-There's another nuance: pressing "cancel" closes the application (currently), but
-the terminal hang occurs *even on the main window.* How do I grab the event of "pressing the X to close" button?
-
-- [ ] Grab the event of "pressing the X to close" button.
-
-- [ ] Consider [widget layout](http://appjar.info/pythonWidgetLayout/).
-
-Also, ideally, I'd be able to resize the app to take up minimal space.
-
-- [ ] See if can resize the app via code.
-
-According to [this answer](https://stackoverflow.com/questions/2933/how-can-i-create-a-directly-executable-cross-platform-gui-app-using-python),
-there are other Python GUI libraries that might be better suited for this, but it honestly this works. Maybe someday.
-
-- [ ] Research [other Python GUI libraries that might be better suited for this](https://stackoverflow.com/questions/2933/how-can-i-create-a-directly-executable-cross-platform-gui-app-using-python).
-
-### History / Finished TODOs
+## History / Finished TODOs
 
 The two sections below are mutually exclusive.
 
-#### Reverse Chronological Order
+### Reverse Chronological Order
 
 Started doing this 4/22/20, 14:53.
 
 - [x] Fix bug where the "pre-break" pomodoro (short break) displayed a percentage relative to a long break.
 - [x] Add a break at the beginning of the session in order to "ease" into the work session.
 
-#### True Chronological Order
+### True Chronological Order
 
 The beginning of 2020 completed TODOs starts here.
 
@@ -341,6 +295,14 @@ There's a bug in that the window constantly takes focus. We might be able to fix
 It displays at the top, but the main problem is that it expects a one-line output. All I need to do is update a file over time, and it'll work.
 
 - [x] Make a Python script that updates a file over time, then make another that *only* reads and prints the line from the file.
+
+- [x] **Allow custom settings, i.e., allow them to change the length of pomodoro, break, and longbreak.**
+  - [x] **Just ask them at the beginning.**
+    - [x] Test to see if this works.
+
+- [x] ~~Use Overcooked sounds as default. More details later.~~ I decided that having custom sounds are just better overall, and isn't mutually exclusive from having Overcooked sounds.
+
+- [x] ~~See if can resize the app via code.~~ The app already takes minimal space.
 
 ### Competing Pomodoro apps
 
