@@ -1,4 +1,4 @@
-#!/usr/bin/env -S PATH="${PATH}:/usr/local/bin" python3
+#!/usr/bin/env PYTHONIOENCODING=UTF-8 /usr/local/bin/python3
 
 import sys
 sys.dont_write_bytecode = True
